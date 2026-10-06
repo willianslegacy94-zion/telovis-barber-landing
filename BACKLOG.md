@@ -1,4 +1,4 @@
-# Backlog de Melhorias — Landing Page Kernel Barber
+# Backlog de Melhorias — Landing Page Telovis Barber
 
 Prioridades definidas por impacto em conversão e visibilidade. Stack atual: HTML + CSS custom + JS vanilla (3 arquivos).
 
@@ -12,20 +12,20 @@ Prioridades definidas por impacto em conversão e visibilidade. Stack atual: HTM
 Adicionar no `<head>` do `index.html`:
 ```html
 <meta property="og:type"        content="website" />
-<meta property="og:title"       content="Kernel Barber — Sistema de Gestão para Barbearias" />
+<meta property="og:title"       content="Telovis Barber — Sistema de Gestão para Barbearias" />
 <meta property="og:description" content="Controle de caixa, relatórios, comissões e IA. Do barbeiro solo à rede de unidades." />
-<meta property="og:url"         content="https://kernelbarber.seudominio.com.br" />
-<meta property="og:image"       content="https://kernelbarber.seudominio.com.br/og-image.jpg" />
+<meta property="og:url"         content="https://telovisbarber.seudominio.com.br" />
+<meta property="og:image"       content="https://telovisbarber.seudominio.com.br/og-image.jpg" />
 <meta property="og:locale"      content="pt_BR" />
 
 <!-- Twitter/X Card -->
 <meta name="twitter:card"        content="summary_large_image" />
-<meta name="twitter:title"       content="Kernel Barber — Sistema de Gestão para Barbearias" />
+<meta name="twitter:title"       content="Telovis Barber — Sistema de Gestão para Barbearias" />
 <meta name="twitter:description" content="Controle de caixa, relatórios, comissões e IA." />
-<meta name="twitter:image"       content="https://kernelbarber.seudominio.com.br/og-image.jpg" />
+<meta name="twitter:image"       content="https://telovisbarber.seudominio.com.br/og-image.jpg" />
 ```
 
-Criar **`og-image.jpg`** (1200×630 px) com: logo Kernel Barber + fundo escuro + tagline.
+Criar **`og-image.jpg`** (1200×630 px) com: logo Telovis Barber + fundo escuro + tagline.
 
 ---
 
@@ -46,7 +46,7 @@ Gerar via [favicon.io](https://favicon.io): `favicon.ico`, `favicon.svg`, `apple
 **Por quê:** Sem isso o Google pode indexar variantes duplicadas da URL.
 
 ```html
-<link rel="canonical" href="https://kernelbarber.seudominio.com.br/" />
+<link rel="canonical" href="https://telovisbarber.seudominio.com.br/" />
 <meta name="robots" content="index, follow" />
 ```
 
@@ -60,7 +60,7 @@ Gerar via [favicon.io](https://favicon.io): `favicon.ico`, `favicon.svg`, `apple
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Kernel Barber",
+  "name": "Telovis Barber",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "description": "Sistema de gestão completo para barbearias.",
