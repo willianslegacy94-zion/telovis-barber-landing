@@ -49,17 +49,22 @@
   <!-- ── HEADER ───────────────────────────────────────────────────────────── -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="?segmento=solo" aria-label="TL Barber, início">
-        <img class="brand-logo" src="assets/tl-logo.png" alt="Logo TL Barber: T dourado e navalha formando o L" width="360" height="353" />
-        <span class="brand-name">TL Barber<small>Sistema de Gestão para Barbearias</small></span>
+      <a class="brand" href="?segmento=solo" aria-label="TL Barber, início" data-i18n-attr="aria-label:brand.aria">
+        <img class="brand-logo" src="assets/tl-logo.png" alt="Logo TL Barber: T dourado e navalha formando o L" data-i18n-attr="alt:brand.alt" width="360" height="353" />
+        <span class="brand-name">TL Barber<small data-i18n="brand.tagline">Sistema de Gestão para Barbearias</small></span>
       </a>
-      <nav class="main-nav" aria-label="Navegação principal">
-        <button class="btn btn-ghost" data-goto="solucoes">A solução</button>
-        <button class="btn btn-ghost" data-goto="processo">Como funciona</button>
-        <button class="btn btn-ghost" data-goto="modulos">Módulos</button>
-        <button class="btn btn-ghost" data-goto="simular">Simulador</button>
+      <nav class="main-nav" aria-label="Navegação principal" data-i18n-attr="aria-label:nav.aria">
+        <button class="btn btn-ghost" data-goto="solucoes" data-i18n="nav.solution">A solução</button>
+        <button class="btn btn-ghost" data-goto="processo" data-i18n="nav.how">Como funciona</button>
+        <button class="btn btn-ghost" data-goto="modulos" data-i18n="nav.modules">Módulos</button>
+        <button class="btn btn-ghost" data-goto="simular" data-i18n="nav.sim">Simulador</button>
+        <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.aria">
+          <button type="button" data-lang="pt" lang="pt-BR" aria-label="Português">PT</button>
+          <button type="button" data-lang="en" lang="en" aria-label="English">EN</button>
+          <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
+        </div>
       </nav>
-      <button class="btn btn-outline header-cta" data-goto="cadastro">Vamos conversar <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+      <button class="btn btn-outline header-cta" data-goto="cadastro"><span data-i18n="cta.talk">Vamos conversar</span> <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
       <button class="btn btn-ghost btn-icon mobile-menu" aria-label="Abrir menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
     </div>
   </header>
@@ -69,47 +74,47 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="status-dot"></span> GESTÃO QUE CABE NA SUA BARBEARIA</div>
+          <div class="eyebrow"><span class="status-dot"></span> <span data-i18n="hero.eyebrow">GESTÃO QUE CABE NA SUA BARBEARIA</span></div>
           <h1><span data-copy="title">Sua barbearia, sob controle.</span><br /><span class="hl" data-copy="highlight">Do caixa à cadeira.</span></h1>
           <p data-copy="description">Caixa do dia, comissões, relatórios, agenda e IA num sistema feito do zero para barbearia — com a sua marca.</p>
           <div class="hero-actions">
-            <button class="btn btn-primary hero-cta" data-goto="cadastro">Quero falar sobre minha barbearia <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
-            <button class="btn btn-ghost hero-finder-link" data-goto="simular">Simule o faturamento da sua cadeira <svg class="i i-sm"><use href="#i-arrow-down"/></svg></button>
+            <button class="btn btn-primary hero-cta" data-goto="cadastro"><span data-i18n="hero.cta">Quero falar sobre minha barbearia</span> <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+            <button class="btn btn-ghost hero-finder-link" data-goto="simular"><span data-i18n="hero.sim">Simule o faturamento da sua cadeira</span> <svg class="i i-sm"><use href="#i-arrow-down"/></svg></button>
           </div>
           <div class="hero-reassurance">
-            <span><svg class="i"><use href="#i-check"/></svg> Sistema com a sua marca</span>
-            <span><svg class="i"><use href="#i-check"/></svg> Sem fidelidade</span>
-            <span><svg class="i"><use href="#i-check"/></svg> Proposta sob medida</span>
+            <span><svg class="i"><use href="#i-check"/></svg> <span data-i18n="hero.r1">Sistema com a sua marca</span></span>
+            <span><svg class="i"><use href="#i-check"/></svg> <span data-i18n="hero.r2">Sem fidelidade</span></span>
+            <span><svg class="i"><use href="#i-check"/></svg> <span data-i18n="hero.r3">Proposta sob medida</span></span>
           </div>
         </div>
 
         <!-- Órbita -->
-        <div class="hero-orbit" aria-label="Módulos conectados do TL Barber">
+        <div class="hero-orbit" aria-label="Módulos conectados do TL Barber" data-i18n-attr="aria-label:hero.orbitAria">
           <div class="orbit-glow"></div>
           <svg class="orbit-paths" viewBox="0 0 500 450" aria-hidden="true"><ellipse cx="250" cy="225" rx="210" ry="115" transform="rotate(-30 250 225)"/><ellipse cx="250" cy="225" rx="200" ry="150" transform="rotate(35 250 225)"/><path d="M250 75V110M250 340V375M85 225H120M380 225H415"/></svg>
           <div class="orbit-center">
             <img src="assets/tl-logo.png" alt="Logo TL Barber" width="360" height="353" />
             <span>TL BARBER</span>
           </div>
-          <div class="orbit-node orbit-top"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-wallet"/></svg></span><span>Caixa &amp; Comissões em Tempo Real</span></button></div>
-          <div class="orbit-node orbit-left"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-calendar"/></svg></span><span>Agenda &amp; Atendimento</span></button></div>
-          <div class="orbit-node orbit-bottom"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-file-chart"/></svg></span><span>Relatórios e IA para o Dono</span></button></div>
+          <div class="orbit-node orbit-top"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-wallet"/></svg></span><span data-i18n="orbit.cash">Caixa &amp; Comissões em Tempo Real</span></button></div>
+          <div class="orbit-node orbit-left"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-calendar"/></svg></span><span data-i18n="orbit.agenda">Agenda &amp; Atendimento</span></button></div>
+          <div class="orbit-node orbit-bottom"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-file-chart"/></svg></span><span data-i18n="orbit.reports">Relatórios e IA para o Dono</span></button></div>
         </div>
 
-        <div class="hero-caption"><span class="tiny-cross">+</span> SUA CADEIRA. SEU CAIXA. SEU SISTEMA.</div>
-        <button class="btn btn-ghost btn-icon scroll-arrow" data-goto="solucoes" aria-label="Ver benefícios"><svg class="i"><use href="#i-arrow-down"/></svg></button>
+        <div class="hero-caption"><span class="tiny-cross">+</span> <span data-i18n="hero.caption">SUA CADEIRA. SEU CAIXA. SEU SISTEMA.</span></div>
+        <button class="btn btn-ghost btn-icon scroll-arrow" data-goto="solucoes" aria-label="Ver benefícios" data-i18n-attr="aria-label:hero.scrollAria"><svg class="i"><use href="#i-arrow-down"/></svg></button>
       </div>
     </section>
 
     <!-- ── SEGMENTOS ──────────────────────────────────────────────────────── -->
     <div class="segment-band">
       <div class="container segment-inner">
-        <span>CADA BARBEARIA TEM UM MOMENTO.</span>
-        <div class="segment-options" role="group" aria-label="Escolha o seu momento">
-          <button class="btn btn-ghost segment-button" data-segment="solo">Barbearia solo</button>
-          <button class="btn btn-ghost segment-button" data-segment="equipe">Equipe de barbeiros</button>
-          <button class="btn btn-ghost segment-button" data-segment="rede">Rede de unidades</button>
-          <button class="btn btn-ghost segment-button" data-segment="abrindo">Abrindo a barbearia</button>
+        <span data-i18n="seg.label">CADA BARBEARIA TEM UM MOMENTO.</span>
+        <div class="segment-options" role="group" aria-label="Escolha o seu momento" data-i18n-attr="aria-label:seg.aria">
+          <button class="btn btn-ghost segment-button" data-segment="solo" data-i18n="seg.btn.solo">Barbearia solo</button>
+          <button class="btn btn-ghost segment-button" data-segment="equipe" data-i18n="seg.btn.equipe">Equipe de barbeiros</button>
+          <button class="btn btn-ghost segment-button" data-segment="rede" data-i18n="seg.btn.rede">Rede de unidades</button>
+          <button class="btn btn-ghost segment-button" data-segment="abrindo" data-i18n="seg.btn.abrindo">Abrindo a barbearia</button>
         </div>
       </div>
     </div>
@@ -119,28 +124,28 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <div class="eyebrow section-eyebrow"><span class="line-mark"></span> FEITO PARA BARBEARIA</div>
-            <h2>Não é só sobre corte.<br />É sobre o seu próximo nível.</h2>
+            <div class="eyebrow section-eyebrow"><span class="line-mark"></span> <span data-i18n="ben.eyebrow">FEITO PARA BARBEARIA</span></div>
+            <h2 data-i18n="ben.title">Não é só sobre corte.<br />É sobre o seu próximo nível.</h2>
           </div>
-          <p>O sistema certo não muda o jeito da sua barbearia.<br class="desktop-break" /> Ele faz o seu jeito funcionar melhor.</p>
+          <p data-i18n="ben.lead">O sistema certo não muda o jeito da sua barbearia.<br class="desktop-break" /> Ele faz o seu jeito funcionar melhor.</p>
         </div>
         <div class="benefits-grid">
           <article class="benefit-card">
             <div class="benefit-top"><span class="benefit-icon"><svg class="i i-lg"><use href="#i-puzzle"/></svg></span><span class="item-number">/01</span></div>
-            <h3>Nascido dentro de uma barbearia</h3>
-            <p>Cada tela foi pensada a partir da rotina real de quem corta cabelo e fecha caixa todo dia. Nada de adaptar sua barbearia a um sistema genérico.</p>
+            <h3 data-i18n="ben.1.t">Nascido dentro de uma barbearia</h3>
+            <p data-i18n="ben.1.p">Cada tela foi pensada a partir da rotina real de quem corta cabelo e fecha caixa todo dia. Nada de adaptar sua barbearia a um sistema genérico.</p>
             <svg class="i benefit-arrow"><use href="#i-move-up-right"/></svg>
           </article>
           <article class="benefit-card">
             <div class="benefit-top"><span class="benefit-icon"><svg class="i i-lg"><use href="#i-workflow"/></svg></span><span class="item-number">/02</span></div>
-            <h3>Menos caderno. Mais controle.</h3>
-            <p>Venda registrada em segundos, comissão calculada certa e caixa fechado sem planilha — sem discussão com a equipe no fim do mês.</p>
+            <h3 data-i18n="ben.2.t">Menos caderno. Mais controle.</h3>
+            <p data-i18n="ben.2.p">Venda registrada em segundos, comissão calculada certa e caixa fechado sem planilha — sem discussão com a equipe no fim do mês.</p>
             <svg class="i benefit-arrow"><use href="#i-move-up-right"/></svg>
           </article>
           <article class="benefit-card">
             <div class="benefit-top"><span class="benefit-icon"><svg class="i i-lg"><use href="#i-layers"/></svg></span><span class="item-number">/03</span></div>
-            <h3>Pronto para a próxima unidade</h3>
-            <p>Comece com uma cadeira e cresça para uma rede. Visão consolidada de tudo, sem perder o controle fino de cada unidade.</p>
+            <h3 data-i18n="ben.3.t">Pronto para a próxima unidade</h3>
+            <p data-i18n="ben.3.p">Comece com uma cadeira e cresça para uma rede. Visão consolidada de tudo, sem perder o controle fino de cada unidade.</p>
             <svg class="i benefit-arrow"><use href="#i-move-up-right"/></svg>
           </article>
         </div>
@@ -151,14 +156,14 @@
     <section class="process-section" id="processo">
       <div class="container process-layout">
         <div>
-          <div class="eyebrow section-eyebrow"><span class="line-mark"></span> DA IMPLANTAÇÃO AO CRESCIMENTO</div>
-          <h2>Completo por dentro.<br /><span class="text-muted">Simples na cadeira.</span></h2>
-          <p class="section-description">Sistema é só metade. A outra metade é gente ajudando<br class="desktop-break" /> você a crescer — de quem já viveu o dia a dia de barbearia.</p>
+          <div class="eyebrow section-eyebrow"><span class="line-mark"></span> <span data-i18n="proc.eyebrow">DA IMPLANTAÇÃO AO CRESCIMENTO</span></div>
+          <h2 data-i18n="proc.title">Completo por dentro.<br /><span class="text-muted">Simples na cadeira.</span></h2>
+          <p class="section-description" data-i18n="proc.lead">Sistema é só metade. A outra metade é gente ajudando<br class="desktop-break" /> você a crescer — de quem já viveu o dia a dia de barbearia.</p>
         </div>
         <div class="process-steps">
-          <div class="process-step"><span class="step-number">01</span><div><h3>Primeiro, a gente escuta.</h3><p>Entendemos seus serviços, sua equipe, suas comissões e o que precisa mudar.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
-          <div class="process-step"><span class="step-number">02</span><div><h3>Depois, implantamos com você.</h3><p>José Alef treina você e sua equipe, e trazemos o histórico do caderno ou da planilha.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
-          <div class="process-step"><span class="step-number">03</span><div><h3>Então, você cresce com mentoria.</h3><p>Thieco Leandro, barbeiro e dono de barbearia, orienta o crescimento do seu negócio.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+          <div class="process-step"><span class="step-number">01</span><div><h3 data-i18n="proc.1.t">Primeiro, a gente escuta.</h3><p data-i18n="proc.1.p">Entendemos seus serviços, sua equipe, suas comissões e o que precisa mudar.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+          <div class="process-step"><span class="step-number">02</span><div><h3 data-i18n="proc.2.t">Depois, implantamos com você.</h3><p data-i18n="proc.2.p">José Alef treina você e sua equipe, e trazemos o histórico do caderno ou da planilha.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+          <div class="process-step"><span class="step-number">03</span><div><h3 data-i18n="proc.3.t">Então, você cresce com mentoria.</h3><p data-i18n="proc.3.p">Thieco Leandro, barbeiro e dono de barbearia, orienta o crescimento do seu negócio.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
         </div>
       </div>
     </section>
@@ -168,78 +173,78 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <div class="eyebrow section-eyebrow"><span class="line-mark"></span> DO CAIXA À INTELIGÊNCIA</div>
-            <h2>Um sistema completo.<br />Cada módulo com um propósito.</h2>
+            <div class="eyebrow section-eyebrow"><span class="line-mark"></span> <span data-i18n="mod.eyebrow">DO CAIXA À INTELIGÊNCIA</span></div>
+            <h2 data-i18n="mod.title">Um sistema completo.<br />Cada módulo com um propósito.</h2>
           </div>
-          <p>Conheça o que o TL Barber faz pela sua barbearia — tudo com a sua marca.</p>
+          <p data-i18n="mod.lead">Conheça o que o TL Barber faz pela sua barbearia — tudo com a sua marca.</p>
         </div>
 
-        <div class="project-filters" role="group" aria-label="Filtrar módulos">
-          <button class="btn btn-default" data-filter="Todos" aria-pressed="true">Todos</button>
-          <button class="btn btn-outline" data-filter="Gestão" aria-pressed="false">Gestão</button>
-          <button class="btn btn-outline" data-filter="IA" aria-pressed="false">Inteligência Artificial</button>
+        <div class="project-filters" role="group" aria-label="Filtrar módulos" data-i18n-attr="aria-label:mod.filterAria">
+          <button class="btn btn-default" data-filter="Todos" aria-pressed="true" data-i18n="mod.f.all">Todos</button>
+          <button class="btn btn-outline" data-filter="Gestão" aria-pressed="false" data-i18n="mod.f.mgmt">Gestão</button>
+          <button class="btn btn-outline" data-filter="IA" aria-pressed="false" data-i18n="mod.f.ai">Inteligência Artificial</button>
           <span class="project-count" aria-live="polite">6 módulos</span>
         </div>
 
         <div class="projects-grid">
           <article class="project-card" data-type="Gestão">
-            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Operação diária</span><svg class="i"><use href="#i-wallet"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Registrar a venda</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Separar serviço, produto e barbeiro</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Caixa fechado no fim do dia</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
-            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-wallet"/></svg></span><span class="project-type">GESTÃO</span></div>
-            <span class="project-category">Financeiro</span>
-            <h3>Caixa do dia</h3>
-            <p>Você sabe exatamente quanto entrou e de onde veio — todo dia, sem caderno.</p>
-            <ul><li>Venda com desconto</li><li>Formas de pagamento</li><li>Fechamento diário</li></ul>
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span data-i18n="m1.ph">Operação diária</span><svg class="i"><use href="#i-wallet"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span data-i18n="m1.s1">Registrar a venda</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span data-i18n="m1.s2">Separar serviço, produto e barbeiro</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span data-i18n="m1.s3">Caixa fechado no fim do dia</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-wallet"/></svg></span><span class="project-type" data-i18n="mod.type.mgmt">GESTÃO</span></div>
+            <span class="project-category" data-i18n="m1.cat">Financeiro</span>
+            <h3 data-i18n="m1.t">Caixa do dia</h3>
+            <p data-i18n="m1.p">Você sabe exatamente quanto entrou e de onde veio — todo dia, sem caderno.</p>
+            <ul><li data-i18n="m1.l1">Venda com desconto</li><li data-i18n="m1.l2">Formas de pagamento</li><li data-i18n="m1.l3">Fechamento diário</li></ul>
           </article>
 
           <article class="project-card" data-type="Gestão">
-            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Equipe</span><svg class="i"><use href="#i-scissors"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Definir regra de comissão</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Calcular a cada atendimento</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Extrato claro por barbeiro</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
-            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-scissors"/></svg></span><span class="project-type">GESTÃO</span></div>
-            <span class="project-category">Profissionais</span>
-            <h3>Comissões</h3>
-            <p>Comissão certa e com histórico — sem conta na mão e sem conflito na equipe.</p>
-            <ul><li>Serviço e produto</li><li>Totais por profissional</li><li>Painel do barbeiro</li></ul>
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span data-i18n="m2.ph">Equipe</span><svg class="i"><use href="#i-scissors"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span data-i18n="m2.s1">Definir regra de comissão</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span data-i18n="m2.s2">Calcular a cada atendimento</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span data-i18n="m2.s3">Extrato claro por barbeiro</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-scissors"/></svg></span><span class="project-type" data-i18n="mod.type.mgmt">GESTÃO</span></div>
+            <span class="project-category" data-i18n="m2.cat">Profissionais</span>
+            <h3 data-i18n="m2.t">Comissões</h3>
+            <p data-i18n="m2.p">Comissão certa e com histórico — sem conta na mão e sem conflito na equipe.</p>
+            <ul><li data-i18n="m2.l1">Serviço e produto</li><li data-i18n="m2.l2">Totais por profissional</li><li data-i18n="m2.l3">Painel do barbeiro</li></ul>
           </article>
 
           <article class="project-card" data-type="Gestão">
-            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Visão do dono</span><svg class="i"><use href="#i-chart"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Faturamento por período</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Serviços e barbeiros que mais vendem</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>DRE na tela em segundos</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
-            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-chart"/></svg></span><span class="project-type">GESTÃO</span></div>
-            <span class="project-category">Relatórios</span>
-            <h3>Relatórios &amp; DRE</h3>
-            <p>Enxergue o que realmente move o faturamento, sem caçar número.</p>
-            <ul><li>Ranking de serviços</li><li>Performance da equipe</li><li>DRE</li></ul>
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span data-i18n="m3.ph">Visão do dono</span><svg class="i"><use href="#i-chart"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span data-i18n="m3.s1">Faturamento por período</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span data-i18n="m3.s2">Serviços e barbeiros que mais vendem</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span data-i18n="m3.s3">DRE na tela em segundos</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-chart"/></svg></span><span class="project-type" data-i18n="mod.type.mgmt">GESTÃO</span></div>
+            <span class="project-category" data-i18n="m3.cat">Relatórios</span>
+            <h3 data-i18n="m3.t">Relatórios &amp; DRE</h3>
+            <p data-i18n="m3.p">Enxergue o que realmente move o faturamento, sem caçar número.</p>
+            <ul><li data-i18n="m3.l1">Ranking de serviços</li><li data-i18n="m3.l2">Performance da equipe</li><li data-i18n="m3.l3">DRE</li></ul>
           </article>
 
           <article class="project-card" data-type="Gestão">
-            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Atendimento</span><svg class="i"><use href="#i-calendar"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Cliente escolhe horário e barbeiro</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Sinal para evitar falta</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Agenda cheia e organizada</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
-            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-calendar"/></svg></span><span class="project-type">GESTÃO</span></div>
-            <span class="project-category">Agenda</span>
-            <h3>Agenda inteligente</h3>
-            <p>Agenda interna e externa, por barbeiro, com menos furo de horário.</p>
-            <ul><li>Agendamento online</li><li>Sinal anti-no-show</li><li>Por profissional</li></ul>
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span data-i18n="m4.ph">Atendimento</span><svg class="i"><use href="#i-calendar"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span data-i18n="m4.s1">Cliente escolhe horário e barbeiro</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span data-i18n="m4.s2">Sinal para evitar falta</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span data-i18n="m4.s3">Agenda cheia e organizada</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-calendar"/></svg></span><span class="project-type" data-i18n="mod.type.mgmt">GESTÃO</span></div>
+            <span class="project-category" data-i18n="m4.cat">Agenda</span>
+            <h3 data-i18n="m4.t">Agenda inteligente</h3>
+            <p data-i18n="m4.p">Agenda interna e externa, por barbeiro, com menos furo de horário.</p>
+            <ul><li data-i18n="m4.l1">Agendamento online</li><li data-i18n="m4.l2">Sinal anti-no-show</li><li data-i18n="m4.l3">Por profissional</li></ul>
           </article>
 
           <article class="project-card" data-type="IA">
-            <div class="project-preview preview-ai"><div class="preview-heading"><span class="preview-status"></span><span>Assistente executivo</span><svg class="i"><use href="#i-bot"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Você pergunta em português</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>A IA lê os números da barbearia</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Resposta com dados reais</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
-            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-bot"/></svg></span><span class="project-type">INTELIGÊNCIA ARTIFICIAL</span></div>
-            <span class="project-category">Chat executivo</span>
-            <h3>IA para o dono</h3>
-            <p>Pergunte "quanto faturei essa semana?" e receba a resposta dentro do sistema.</p>
-            <ul><li>Chat dentro do sistema</li><li>Alertas no WhatsApp</li><li>Insights automáticos</li></ul>
+            <div class="project-preview preview-ai"><div class="preview-heading"><span class="preview-status"></span><span data-i18n="m5.ph">Assistente executivo</span><svg class="i"><use href="#i-bot"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span data-i18n="m5.s1">Você pergunta em português</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span data-i18n="m5.s2">A IA lê os números da barbearia</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span data-i18n="m5.s3">Resposta com dados reais</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-bot"/></svg></span><span class="project-type" data-i18n="mod.type.ai">INTELIGÊNCIA ARTIFICIAL</span></div>
+            <span class="project-category" data-i18n="m5.cat">Chat executivo</span>
+            <h3 data-i18n="m5.t">IA para o dono</h3>
+            <p data-i18n="m5.p">Pergunte "quanto faturei essa semana?" e receba a resposta dentro do sistema.</p>
+            <ul><li data-i18n="m5.l1">Chat dentro do sistema</li><li data-i18n="m5.l2">Alertas no WhatsApp</li><li data-i18n="m5.l3">Insights automáticos</li></ul>
           </article>
 
           <article class="project-card" data-type="Gestão">
-            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Sua marca</span><svg class="i"><use href="#i-store"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Nome e identidade da sua barbearia</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Uma ou várias unidades</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Rede inteira num login só</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
-            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-store"/></svg></span><span class="project-type">GESTÃO</span></div>
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span data-i18n="m6.ph">Sua marca</span><svg class="i"><use href="#i-store"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span data-i18n="m6.s1">Nome e identidade da sua barbearia</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span data-i18n="m6.s2">Uma ou várias unidades</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span data-i18n="m6.s3">Rede inteira num login só</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-store"/></svg></span><span class="project-type" data-i18n="mod.type.mgmt">GESTÃO</span></div>
             <span class="project-category">Whitelabel</span>
-            <h3>Multi-unidade com a sua marca</h3>
-            <p>Sua equipe e seus clientes veem a sua barbearia, não a nossa.</p>
-            <ul><li>Whitelabel</li><li>Visão consolidada</li><li>Controle por filial</li></ul>
+            <h3 data-i18n="m6.t">Multi-unidade com a sua marca</h3>
+            <p data-i18n="m6.p">Sua equipe e seus clientes veem a sua barbearia, não a nossa.</p>
+            <ul><li>Whitelabel</li><li data-i18n="m6.l2">Visão consolidada</li><li data-i18n="m6.l3">Controle por filial</li></ul>
           </article>
         </div>
 
         <div class="projects-bottom">
-          <p>Sua barbearia é única.<strong> Seu sistema também.</strong></p>
-          <button class="btn btn-outline" data-goto="cadastro">Vamos montar sua proposta <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+          <p data-i18n="mod.bottom">Sua barbearia é única.<strong> Seu sistema também.</strong></p>
+          <button class="btn btn-outline" data-goto="cadastro"><span data-i18n="mod.cta">Vamos montar sua proposta</span> <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
         </div>
       </div>
     </section>
@@ -249,15 +254,16 @@
       <div class="container trust-layout">
         <div class="trust-statement">
           <svg class="i quote-symbol"><use href="#i-quote"/></svg>
-          <h2>Antes eu fechava o caixa no caderno e nunca batia. <span>Hoje tenho o DRE na tela em segundos.</span></h2>
-          <div class="trust-signature"><span class="t-avatar">TL</span><div>Thieco Leandro<small>BARBEIRO E PROPRIETÁRIO — BARBEARIA THIECO LEANDRO</small></div></div>
+          <h2 lang="pt-BR">Antes eu fechava o caixa no caderno e nunca batia. <span>Hoje tenho o DRE na tela em segundos.</span></h2>
+          <p class="quote-translation" data-i18n="trust.translation"></p>
+          <div class="trust-signature"><span class="t-avatar">TL</span><div>Thieco Leandro<small data-i18n="trust.role">BARBEIRO E PROPRIETÁRIO — BARBEARIA THIECO LEANDRO</small></div></div>
         </div>
         <div class="proof-placeholder">
           <svg class="i i-lg"><use href="#i-check-check"/></svg>
-          <div class="eyebrow">VALIDADO NA CADEIRA</div>
-          <h3>+8.500 vendas processadas desde 2024.</h3>
-          <p>Não é protótipo. O TL Barber nasceu e roda numa barbearia de verdade, com histórico real de caixa.</p>
-          <span class="proof-note">Em operação contínua</span>
+          <div class="eyebrow" data-i18n="proof.eyebrow">VALIDADO NA CADEIRA</div>
+          <h3 data-i18n="proof.title">+8.500 vendas no histórico.</h3>
+          <p data-i18n="proof.text">Não é protótipo. O TL Barber nasceu em março de 2026 dentro de uma barbearia de verdade, que trouxe todo o caixa desde 2024 para o sistema.</p>
+          <span class="proof-note" data-i18n="proof.note">Em operação contínua</span>
         </div>
       </div>
     </section>
@@ -267,36 +273,36 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <div class="eyebrow section-eyebrow"><svg class="i i-sm"><use href="#i-calculator"/></svg> FATURAMENTO POR CADEIRA</div>
-            <h2>Quanto cada cadeira<br />fatura no mês?</h2>
+            <div class="eyebrow section-eyebrow"><svg class="i i-sm"><use href="#i-calculator"/></svg> <span data-i18n="sim.eyebrow">FATURAMENTO POR CADEIRA</span></div>
+            <h2 data-i18n="sim.title">Quanto cada cadeira<br />fatura no mês?</h2>
           </div>
-          <p>Comissão, ticket médio e agenda cheia mexem direto no seu caixa. Como isso se traduz nos seus números?</p>
+          <p data-i18n="sim.lead">Comissão, ticket médio e agenda cheia mexem direto no seu caixa. Como isso se traduz nos seus números?</p>
         </div>
         <div class="cmv-layout">
           <div>
-            <h3>Simule uma cadeira da sua barbearia</h3>
-            <p class="cmv-caption">Os números iniciais são apenas um exemplo, não dados de clientes.</p>
+            <h3 data-i18n="sim.h3">Simule uma cadeira da sua barbearia</h3>
+            <p class="cmv-caption" data-i18n="sim.caption">Os números iniciais são apenas um exemplo, não dados de clientes.</p>
             <div class="cmv-inputs">
-              <label>Atendimentos por dia<input type="number" min="0" step="1" inputmode="numeric" name="atendimentos" value="12" /></label>
-              <label>Ticket médio (R$)<input type="number" min="0" step="0.01" inputmode="decimal" name="ticket" value="55" /></label>
-              <label>Dias trabalhados no mês<input type="number" min="0" max="31" step="1" inputmode="numeric" name="dias" value="24" /></label>
-              <label>Comissão do barbeiro (%)<input type="number" min="0" max="100" step="0.5" inputmode="decimal" name="comissao" value="40" /></label>
+              <label><span data-i18n="sim.in1">Atendimentos por dia</span><input type="number" min="0" step="1" inputmode="numeric" name="atendimentos" value="12" /></label>
+              <label><span data-i18n="sim.in2">Ticket médio (R$)</span><input type="number" min="0" step="0.01" inputmode="decimal" name="ticket" value="55" /></label>
+              <label><span data-i18n="sim.in3">Dias trabalhados no mês</span><input type="number" min="0" max="31" step="1" inputmode="numeric" name="dias" value="24" /></label>
+              <label><span data-i18n="sim.in4">Comissão do barbeiro (%)</span><input type="number" min="0" max="100" step="0.5" inputmode="decimal" name="comissao" value="40" /></label>
             </div>
-            <p class="cmv-formula">Faturamento = atendimentos × ticket médio × dias</p>
+            <p class="cmv-formula" data-i18n="sim.formula">Faturamento = atendimentos × ticket médio × dias</p>
           </div>
           <div class="cmv-result" aria-live="polite">
             <div data-result="ok">
-              <span>FATURAMENTO ESTIMADO DA CADEIRA</span>
+              <span data-i18n="sim.resLabel">FATURAMENTO ESTIMADO DA CADEIRA</span>
               <strong data-out="faturamento">R$ 0,00</strong>
-              <div class="cmv-ratio"><b data-out="comissao">R$ 0,00</b><span>de comissão para o barbeiro no mês</span></div>
-              <div class="cmv-remainder"><span>Fica para a barbearia</span><b data-out="casa">R$ 0,00</b></div>
-              <p>Esse saldo não é lucro: ainda faltam aluguel, produtos, impostos e outras despesas. Com o TL Barber, esse número aparece de verdade, todo dia.</p>
+              <div class="cmv-ratio"><b data-out="comissao">R$ 0,00</b><span data-i18n="sim.ratio">de comissão para o barbeiro no mês</span></div>
+              <div class="cmv-remainder"><span data-i18n="sim.rest">Fica para a barbearia</span><b data-out="casa">R$ 0,00</b></div>
+              <p data-i18n="sim.note">Esse saldo não é lucro: ainda faltam aluguel, produtos, impostos e outras despesas. Com o TL Barber, esse número aparece de verdade, todo dia.</p>
             </div>
-            <p data-result="erro" role="alert" hidden>Informe valores não negativos e uma comissão entre 0 e 100%.</p>
-            <a class="btn btn-primary" data-sim-cta href="#" target="_blank" rel="noopener noreferrer">Quero acompanhar meus números <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
+            <p data-result="erro" role="alert" hidden data-i18n="sim.err">Informe valores não negativos e uma comissão entre 0 e 100%.</p>
+            <a class="btn btn-primary" data-sim-cta href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="sim.cta">Quero acompanhar meus números</span> <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
           </div>
         </div>
-        <p class="cmv-caption cmv-privacy">Simulação ilustrativa. Os valores não são salvos nem enviados ao preencher. Ao abrir o WhatsApp, apenas o resultado acompanha sua mensagem.</p>
+        <p class="cmv-caption cmv-privacy" data-i18n="sim.privacy">Simulação ilustrativa. Os valores não são salvos nem enviados ao preencher. Ao abrir o WhatsApp, apenas o resultado acompanha sua mensagem.</p>
       </div>
     </section>
 
@@ -304,44 +310,44 @@
     <section class="contact-section" id="cadastro">
       <div class="container contact-layout">
         <div class="contact-copy">
-          <div class="eyebrow section-eyebrow"><span class="line-mark"></span> SUA PROPOSTA COMEÇA AQUI</div>
+          <div class="eyebrow section-eyebrow"><span class="line-mark"></span> <span data-i18n="ct.eyebrow">SUA PROPOSTA COMEÇA AQUI</span></div>
           <h2 data-copy="offer">Controle de verdade, mesmo trabalhando sozinho.</h2>
-          <p>Conte como funciona a sua barbearia. Em até 24h você recebe uma proposta sob medida para o seu momento — sem tabela fechada.</p>
+          <p data-i18n="ct.lead">Conte como funciona a sua barbearia. Em até 24h você recebe uma proposta sob medida para o seu momento — sem tabela fechada.</p>
           <div class="contact-list">
-            <span><svg class="i"><use href="#i-check-check"/></svg> Proposta sob medida em até 24h</span>
-            <span><svg class="i"><use href="#i-palette"/></svg> Sistema com a sua marca</span>
-            <span><svg class="i"><use href="#i-scissors"/></svg> Sem fidelidade, sem taxa surpresa</span>
+            <span><svg class="i"><use href="#i-check-check"/></svg> <span data-i18n="ct.l1">Proposta sob medida em até 24h</span></span>
+            <span><svg class="i"><use href="#i-palette"/></svg> <span data-i18n="ct.l2">Sistema com a sua marca</span></span>
+            <span><svg class="i"><use href="#i-scissors"/></svg> <span data-i18n="ct.l3">Sem fidelidade, sem taxa surpresa</span></span>
           </div>
           <div class="direct-contact">
-            <h3>Converse pelo WhatsApp</h3>
+            <h3 data-i18n="ct.wa">Converse pelo WhatsApp</h3>
             <div class="contact-buttons">
-              <a class="btn btn-outline" href="https://wa.me/5511954079335?text=Ol%C3%A1!%20Quero%20conhecer%20o%20TL%20Barber." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp (11) 95407-9335"><svg class="i"><use href="#i-message"/></svg>(11) 95407-9335<svg class="i i-sm"><use href="#i-arrow-up-right"/></svg></a>
-              <a class="btn btn-outline" href="https://wa.me/5511953445647?text=Ol%C3%A1!%20Quero%20conhecer%20o%20TL%20Barber." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp (11) 95344-5647"><svg class="i"><use href="#i-message"/></svg>(11) 95344-5647<svg class="i i-sm"><use href="#i-arrow-up-right"/></svg></a>
+              <a class="btn btn-outline" data-wa="5511954079335" href="https://wa.me/5511954079335?text=Ol%C3%A1!%20Quero%20conhecer%20o%20TL%20Barber." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp (11) 95407-9335" data-i18n-attr="aria-label:ct.waAria1"><svg class="i"><use href="#i-message"/></svg><span data-i18n="ct.phone1">(11) 95407-9335</span><svg class="i i-sm"><use href="#i-arrow-up-right"/></svg></a>
+              <a class="btn btn-outline" data-wa="5511953445647" href="https://wa.me/5511953445647?text=Ol%C3%A1!%20Quero%20conhecer%20o%20TL%20Barber." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp (11) 95344-5647" data-i18n-attr="aria-label:ct.waAria2"><svg class="i"><use href="#i-message"/></svg><span data-i18n="ct.phone2">(11) 95344-5647</span><svg class="i i-sm"><use href="#i-arrow-up-right"/></svg></a>
             </div>
           </div>
-          <div class="contact-note"><svg class="i"><use href="#i-sparkles"/></svg><span>Você cuida da cadeira.<br /><strong>A gente cuida da gestão.</strong></span></div>
+          <div class="contact-note"><svg class="i"><use href="#i-sparkles"/></svg><span data-i18n="ct.note">Você cuida da cadeira.<br /><strong>A gente cuida da gestão.</strong></span></div>
         </div>
 
         <form class="lead-form" novalidate>
-          <div class="form-title"><span>VAMOS ENTENDER SUA BARBEARIA</span><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+          <div class="form-title"><span data-i18n="f.title">VAMOS ENTENDER SUA BARBEARIA</span><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
           <div class="form-grid">
-            <label>Seu nome<input name="nome" placeholder="Como podemos te chamar?" autocomplete="name" required minlength="2" maxlength="100" /></label>
-            <label>Barbearia<input name="barbearia" placeholder="Nome da sua barbearia" autocomplete="organization" required minlength="2" maxlength="150" /></label>
-            <label>Cidade <span class="optional">(opcional)</span><input name="cidade" placeholder="Ex.: São Paulo/SP" autocomplete="address-level2" maxlength="80" /></label>
-            <label>Barbeiros na equipe
+            <label><span data-i18n="f.name">Seu nome</span><input name="nome" placeholder="Como podemos te chamar?" data-i18n-attr="placeholder:f.namePh" autocomplete="name" required minlength="2" maxlength="100" /></label>
+            <label><span data-i18n="f.shop">Barbearia</span><input name="barbearia" placeholder="Nome da sua barbearia" data-i18n-attr="placeholder:f.shopPh" autocomplete="organization" required minlength="2" maxlength="150" /></label>
+            <label><span data-i18n="f.city">Cidade <span class="optional">(opcional)</span></span><input name="cidade" placeholder="Ex.: São Paulo/SP" data-i18n-attr="placeholder:f.cityPh" autocomplete="address-level2" maxlength="80" /></label>
+            <label><span data-i18n="f.team">Barbeiros na equipe</span>
               <select name="equipe">
-                <option>Só eu</option>
-                <option>2 a 4</option>
-                <option>5 a 10</option>
-                <option>Mais de 10 / várias unidades</option>
+                <option data-i18n="f.o1">Só eu</option>
+                <option data-i18n="f.o2">2 a 4</option>
+                <option data-i18n="f.o3">5 a 10</option>
+                <option data-i18n="f.o4">Mais de 10 / várias unidades</option>
               </select>
             </label>
           </div>
-          <details class="lead-optional"><summary>Contar mais sobre a barbearia (opcional)</summary><label><span data-copy="need">O que mais pesa na sua rotina hoje?</span><textarea name="mensagem" placeholder="Caixa, comissões, agenda, relatórios…" maxlength="1500" rows="3"></textarea></label></details>
-          <label class="consent"><input name="consent" type="checkbox" required /><span>Autorizo o TL Barber a entrar em contato sobre minha barbearia. Meus dados serão usados apenas para este atendimento.</span></label>
+          <details class="lead-optional"><summary data-i18n="f.more">Contar mais sobre a barbearia (opcional)</summary><label><span data-copy="need">O que mais pesa na sua rotina hoje?</span><textarea name="mensagem" placeholder="Caixa, comissões, agenda, relatórios…" data-i18n-attr="placeholder:f.msgPh" maxlength="1500" rows="3"></textarea></label></details>
+          <label class="consent"><input name="consent" type="checkbox" required /><span data-i18n="f.consent">Autorizo o TL Barber a entrar em contato sobre minha barbearia. Meus dados serão usados apenas para este atendimento.</span></label>
           <p class="form-error" role="alert" hidden></p>
-          <button type="submit" class="btn btn-primary submit-button">Quero falar sobre minha barbearia <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
-          <p class="form-footnote"><svg class="i i-xs"><use href="#i-lock"/></svg> Ao enviar, abrimos o WhatsApp com sua mensagem. Nada fica salvo neste site.</p>
+          <button type="submit" class="btn btn-primary submit-button"><span data-i18n="hero.cta">Quero falar sobre minha barbearia</span> <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+          <p class="form-footnote"><svg class="i i-xs"><use href="#i-lock"/></svg> <span data-i18n="f.foot">Ao enviar, abrimos o WhatsApp com sua mensagem. Nada fica salvo neste site.</span></p>
         </form>
       </div>
     </section>
@@ -349,14 +355,15 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="?segmento=solo" aria-label="TL Barber, início">
+      <a class="brand" href="?segmento=solo" aria-label="TL Barber, início" data-i18n-attr="aria-label:brand.aria">
         <img class="brand-logo" src="assets/tl-logo.png" alt="" width="360" height="353" />
         <span class="brand-name">TL Barber</span>
       </a>
-      <span>© 2026 TL Barber. Um produto Telovis Tech · Desenvolvido por Willians Santana.</span>
+      <span data-i18n="ft.copy">© 2026 TL Barber. Um produto Telovis Tech · Desenvolvido por Willians Santana.</span>
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

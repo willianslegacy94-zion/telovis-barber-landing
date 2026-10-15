@@ -74,6 +74,10 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .main-nav .btn:hover { color: var(--foreground); }
 .header-cta { height: 39px; font-size: 12px; padding-inline: 19px; }
 .mobile-menu { display: none; }
+.lang-switch { display: flex; align-items: center; gap: 2px; margin-left: 6px; padding-left: 12px; border-left: 1px solid var(--border); }
+.lang-switch button { height: 28px; padding: 0 7px; border: 0; border-radius: 4px; background: transparent; color: var(--muted-foreground); font-size: 11px; font-weight: 600; letter-spacing: .5px; transition: background .2s, color .2s; }
+.lang-switch button:hover { color: var(--foreground); background: var(--secondary); }
+.lang-switch button[aria-pressed="true"] { color: var(--gold-dark); background: var(--secondary); }
 
 /* ── Hero (claro) ───────────────────────────────────────────────────────── */
 .hero {
@@ -235,6 +239,8 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .quote-symbol { color: var(--primary); width: 44px; height: 44px; stroke-width: 1.4; }
 .trust-statement h2 { font-size: 30px; font-weight: 500; line-height: 1.3; margin: 14px 0 27px; color: var(--ink); }
 .trust-statement h2 span { color: var(--gold-dark); }
+.quote-translation { margin: -12px 0 27px; font-size: 13px; font-style: italic; line-height: 1.8; color: var(--muted-foreground); max-width: 520px; }
+.quote-translation:empty { display: none; }
 .trust-signature { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; }
 .trust-signature small { display: block; font-size: 9px; font-weight: 500; color: var(--muted-foreground); letter-spacing: 1px; margin-top: 5px; }
 .t-avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-family: var(--font-brand); font-size: 12px; flex-shrink: 0; }
@@ -265,6 +271,7 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .cmv-remainder span { font-size: 12px; color: var(--foreground); }
 .cmv-result p { font-size: 12px; color: var(--muted-foreground); line-height: 1.8; }
 .cmv-result .btn { white-space: normal; height: auto; min-height: 42px; font-size: 12px; margin-top: 4px; }
+.cmv-result .btn span { font-size: inherit; color: inherit; }
 .cmv-privacy { margin-top: 25px; max-width: 850px; }
 
 /* ── Contato ────────────────────────────────────────────────────────────── */
@@ -346,6 +353,8 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     padding: 16px 20px; background: var(--card); border-bottom: 1px solid var(--border); box-shadow: 0 20px 30px -20px rgba(28,26,20,.25);
   }
   .main-nav.is-open .btn { justify-content: flex-start; height: 44px; font-size: 13px; }
+  .main-nav.is-open .lang-switch { margin: 8px 0 0; padding: 12px 0 0; border-left: 0; border-top: 1px solid var(--border); }
+  .main-nav.is-open .lang-switch button { height: 36px; padding: 0 14px; font-size: 12px; }
 }
 
 @media (max-width: 760px) {

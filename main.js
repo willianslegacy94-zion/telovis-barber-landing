@@ -1,8 +1,71 @@
 // Número que recebe o formulário e o simulador (o 2º contato fica só nos botões)
 const WHATSAPP = '5511954079335';
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const wa = (text) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
-const money = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
+const wa = (text, number = WHATSAPP) => `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+
+// ── Idioma ───────────────────────────────────────────────────────────────
+// Ordem: ?lang= na URL → escolha salva → idioma do navegador → português.
+const LANGS = {
+  pt: { html: 'pt-BR', locale: 'pt-BR', currency: 'BRL' },
+  en: { html: 'en', locale: 'en-US', currency: 'USD' },
+  es: { html: 'es', locale: 'es-419', currency: 'USD' },
+};
+const LANG_KEY = 'tlbarber_lang';
+let lang = 'pt';
+const t = (key) => I18N[lang][key] ?? I18N.pt[key] ?? key;
+const money = (v) => new Intl.NumberFormat(LANGS[lang].locale, { style: 'currency', currency: LANGS[lang].currency, currencyDisplay: 'narrowSymbol' }).format(v);
+
+const metaTags = {
+  'meta.description': document.querySelector('meta[name="description"]'),
+  'meta.ogTitle': document.querySelector('meta[property="og:title"]'),
+  'meta.ogDescription': document.querySelector('meta[property="og:description"]'),
+};
+
+// O português do HTML vira o dicionário `pt` (assim o texto não fica em dois lugares)
+document.querySelectorAll('[data-i18n]').forEach((el) => { I18N.pt[el.dataset.i18n] ??= el.innerHTML.trim(); });
+document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+  el.dataset.i18nAttr.split(';').forEach((pair) => {
+    const [attr, key] = pair.split(':');
+    I18N.pt[key] ??= el.getAttribute(attr);
+  });
+});
+
+function detectLang() {
+  const fromUrl = new URLSearchParams(location.search).get('lang');
+  if (LANGS[fromUrl]) return fromUrl;
+  try { const saved = localStorage.getItem(LANG_KEY); if (LANGS[saved]) return saved; } catch { /* storage bloqueado */ }
+  const nav = (navigator.languages || [navigator.language || '']).map((l) => l.slice(0, 2).toLowerCase());
+  return nav.find((l) => LANGS[l]) || 'pt';
+}
+
+function applyLang(next, persist) {
+  lang = LANGS[next] ? next : 'pt';
+  document.documentElement.lang = LANGS[lang].html;
+  document.title = t('meta.title');
+  Object.entries(metaTags).forEach(([key, el]) => el?.setAttribute('content', t(key)));
+  document.querySelectorAll('[data-i18n]').forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+    el.dataset.i18nAttr.split(';').forEach((pair) => {
+      const [attr, key] = pair.split(':');
+      el.setAttribute(attr, t(key));
+    });
+  });
+  document.querySelectorAll('[data-lang]').forEach((btn) => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
+  document.querySelectorAll('[data-wa]').forEach((a) => { a.href = wa(t('wa.hello'), a.dataset.wa); });
+
+  // Partes montadas pelo JS
+  setMenu(nav.classList.contains('is-open'));
+  applySegment(currentSegment, false);
+  updateCount();
+  simulate();
+
+  if (persist) {
+    try { localStorage.setItem(LANG_KEY, lang); } catch { /* storage bloqueado */ }
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', lang);
+    history.replaceState(null, '', url);
+  }
+}
 
 // ── Navegação ────────────────────────────────────────────────────────────
 const nav = document.querySelector('.main-nav');
@@ -10,7 +73,7 @@ const menuBtn = document.querySelector('.mobile-menu');
 function setMenu(open) {
   nav.classList.toggle('is-open', open);
   menuBtn.setAttribute('aria-expanded', String(open));
-  menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  menuBtn.setAttribute('aria-label', t(open ? 'menu.close' : 'menu.open'));
   menuBtn.querySelector('use').setAttribute('href', open ? '#i-x' : '#i-menu');
 }
 menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
@@ -22,34 +85,14 @@ document.querySelectorAll('[data-goto]').forEach((el) => {
   });
 });
 
+document.querySelectorAll('[data-lang]').forEach((btn) => btn.addEventListener('click', () => applyLang(btn.dataset.lang, true)));
+
 // ── Segmentos (trocam o texto do hero e do contato) ─────────────────────
-const segments = {
-  solo: {
-    title: 'Sua barbearia, sob controle.', highlight: 'Do caixa à cadeira.',
-    description: 'Você corta, atende e ainda fecha o caixa. O TL Barber organiza vendas, despesas e relatórios para você saber quanto a barbearia realmente fatura — sem caderno.',
-    offer: 'Controle de verdade, mesmo trabalhando sozinho.', need: 'O que mais pesa na sua rotina hoje?',
-  },
-  equipe: {
-    title: 'Sua equipe afiada.', highlight: 'Comissão sem discussão.',
-    description: 'Cada atendimento registrado, cada comissão calculada certa e um extrato claro por barbeiro. Você acompanha a performance da equipe sem fazer conta na mão.',
-    offer: 'Mais tempo para a cadeira, menos tempo na planilha.', need: 'Como você calcula a comissão da equipe hoje?',
-  },
-  rede: {
-    title: 'Várias unidades.', highlight: 'Uma visão só.',
-    description: 'Acompanhe a rede inteira de um lugar, com controle fino de cada unidade — tudo com a marca da sua barbearia, num único login.',
-    offer: 'Conecte todas as unidades da sua rede.', need: 'Quantas unidades você tem e o que precisa enxergar?',
-  },
-  abrindo: {
-    title: 'Sua barbearia nova.', highlight: 'Começando do jeito certo.',
-    description: 'Comece com caixa, comissões e relatórios organizados desde o primeiro corte — e com mentoria de quem já viveu o dia a dia de barbearia.',
-    offer: 'Vamos colocar sua barbearia de pé do jeito certo.', need: 'Em que fase está a abertura da sua barbearia?',
-  },
-};
+const SEGMENTS = ['solo', 'equipe', 'rede', 'abrindo'];
 let currentSegment = 'solo';
 function applySegment(key, push) {
-  const copy = segments[key] ? segments[key] : segments.solo;
-  currentSegment = segments[key] ? key : 'solo';
-  document.querySelectorAll('[data-copy]').forEach((el) => { el.textContent = copy[el.dataset.copy]; });
+  currentSegment = SEGMENTS.includes(key) ? key : 'solo';
+  document.querySelectorAll('[data-copy]').forEach((el) => { el.textContent = t(`seg.${currentSegment}.${el.dataset.copy}`); });
   document.querySelectorAll('[data-segment]').forEach((btn) => {
     const active = btn.dataset.segment === currentSegment;
     btn.classList.toggle('active', active);
@@ -62,11 +105,15 @@ function applySegment(key, push) {
   }
 }
 document.querySelectorAll('[data-segment]').forEach((btn) => btn.addEventListener('click', () => applySegment(btn.dataset.segment, true)));
-applySegment(new URLSearchParams(location.search).get('segmento') || 'solo', false);
+currentSegment = new URLSearchParams(location.search).get('segmento') || 'solo';
 
 // ── Filtro de módulos ────────────────────────────────────────────────────
 const cards = [...document.querySelectorAll('.project-card')];
 const count = document.querySelector('.project-count');
+function updateCount() {
+  const visible = cards.filter((card) => !card.hidden).length;
+  count.textContent = `${visible} ${t(visible === 1 ? 'mod.count.one' : 'mod.count.many')}`;
+}
 document.querySelectorAll('[data-filter]').forEach((btn) => {
   btn.addEventListener('click', () => {
     const filter = btn.dataset.filter;
@@ -76,13 +123,8 @@ document.querySelectorAll('[data-filter]').forEach((btn) => {
       b.classList.toggle('btn-outline', !on);
       b.setAttribute('aria-pressed', String(on));
     });
-    let visible = 0;
-    cards.forEach((card) => {
-      const show = filter === 'Todos' || card.dataset.type === filter;
-      card.hidden = !show;
-      if (show) visible++;
-    });
-    count.textContent = `${visible} ${visible === 1 ? 'módulo' : 'módulos'}`;
+    cards.forEach((card) => { card.hidden = !(filter === 'Todos' || card.dataset.type === filter); });
+    updateCount();
   });
 });
 
@@ -96,16 +138,15 @@ function simulate() {
   const ok = raw.every((v) => v !== '') && [atend, ticket, dias, pct].every((n) => Number.isFinite(n) && n >= 0) && pct <= 100;
   sim.querySelector('[data-result="ok"]').hidden = !ok;
   sim.querySelector('[data-result="erro"]').hidden = ok;
-  if (!ok) { simCta.href = wa('Olá! Quero entender meus números com o TL Barber.'); return; }
+  if (!ok) { simCta.href = wa(t('sim.waErr')); return; }
   const faturamento = atend * ticket * dias;
   const comissao = faturamento * pct / 100;
   sim.querySelector('[data-out="faturamento"]').textContent = money(faturamento);
   sim.querySelector('[data-out="comissao"]').textContent = money(comissao);
   sim.querySelector('[data-out="casa"]').textContent = money(faturamento - comissao);
-  simCta.href = wa(`Olá! Simulei no site do TL Barber: uma cadeira faturando ${money(faturamento)} por mês (${pct}% de comissão). Quero acompanhar meus números de verdade.`);
+  simCta.href = wa(t('sim.wa').replace('{total}', money(faturamento)).replace('{pct}', pct));
 }
 sim.querySelectorAll('input').forEach((input) => input.addEventListener('input', simulate));
-simulate();
 
 // ── Formulário → WhatsApp ───────────────────────────────────────────────
 const form = document.querySelector('.lead-form');
@@ -114,18 +155,20 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = Object.fromEntries(new FormData(form));
   const fail = (msg) => { formError.textContent = msg; formError.hidden = false; };
-  if (!data.nome || data.nome.trim().length < 2) return fail('Informe seu nome.');
-  if (!data.barbearia || data.barbearia.trim().length < 2) return fail('Informe o nome da barbearia.');
-  if (!form.consent.checked) return fail('Autorize o contato para continuar.');
+  if (!data.nome || data.nome.trim().length < 2) return fail(t('f.errName'));
+  if (!data.barbearia || data.barbearia.trim().length < 2) return fail(t('f.errShop'));
+  if (!form.consent.checked) return fail(t('f.errConsent'));
   formError.hidden = true;
   const lines = [
-    'Olá! Quero uma proposta do TL Barber.',
-    `Nome: ${data.nome.trim()}`,
-    `Barbearia: ${data.barbearia.trim()}`,
-    data.cidade && data.cidade.trim() ? `Cidade: ${data.cidade.trim()}` : '',
-    `Barbeiros na equipe: ${data.equipe}`,
-    `Momento: ${document.querySelector(`[data-segment="${currentSegment}"]`).textContent}`,
-    data.mensagem && data.mensagem.trim() ? `Detalhes: ${data.mensagem.trim()}` : '',
+    t('f.waIntro'),
+    `${t('f.waName')}: ${data.nome.trim()}`,
+    `${t('f.waShop')}: ${data.barbearia.trim()}`,
+    data.cidade && data.cidade.trim() ? `${t('f.waCity')}: ${data.cidade.trim()}` : '',
+    `${t('f.waTeam')}: ${data.equipe}`,
+    `${t('f.waMoment')}: ${document.querySelector(`[data-segment="${currentSegment}"]`).textContent}`,
+    data.mensagem && data.mensagem.trim() ? `${t('f.waDetails')}: ${data.mensagem.trim()}` : '',
   ].filter(Boolean);
   window.open(wa(lines.join('\n')), '_blank', 'noopener');
 });
+
+applyLang(detectLang(), false);
