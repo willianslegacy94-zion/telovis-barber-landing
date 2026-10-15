@@ -3,461 +3,357 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telovis Barber — Sistema de Gestão para Barbearias</title>
-  <meta name="description" content="Sistema de gestão completo para barbearias. Controle de caixa, relatórios, profissionais e inteligência artificial. Do solo à rede." />
+  <title>TL Barber | Sistema de gestão para barbearias</title>
+  <meta name="description" content="TL Barber: caixa, comissões, relatórios, agenda e IA num sistema feito para barbearia, com a sua marca. Do barbeiro solo à rede de unidades." />
+  <meta property="og:title" content="TL Barber | Sua barbearia, seu sistema." />
+  <meta property="og:description" content="Gestão de verdade para barbearias. Vamos conversar sobre a sua." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#F7F4EC" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ── NAV ──────────────────────────────────────────────────────────────── -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <span class="logo">Telovis <span class="logo-accent">Barber</span></span>
-      <div class="nav-links">
-        <a href="#solucao">Funcionalidades</a>
-        <a href="#mentoria">Mentoria</a>
-        <a href="#planos">Planos</a>
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#faq">Dúvidas</a>
-      </div>
-      <a href="https://wa.me/5511948455946?text=Olá%2C%20quero%20conhecer%20o%20Telovis%20Barber"
-         target="_blank" class="btn btn-outline btn-sm">
-        Fale Conosco
+  <!-- Ícones (traço estilo lucide) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-move-up-right" viewBox="0 0 24 24"><path d="M13 5h6v6"/><path d="M19 5 5 19"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-check" viewBox="0 0 24 24"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.94 15.5a2 2 0 0 0-1.44-1.44l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/><path d="M20 3v4M22 5h-4"/></symbol>
+    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M19.44 13.6a2 2 0 1 1 0-3.2V6a1 1 0 0 0-1-1h-4.4a2 2 0 1 0-3.2 0H6.4a1 1 0 0 0-1 1v4.4a2 2 0 1 1 0 3.2V18a1 1 0 0 0 1 1h4.4a2 2 0 1 1 3.2 0h4.4a1 1 0 0 0 1-1z"/></symbol>
+    <symbol id="i-workflow" viewBox="0 0 24 24"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 16v5M16 14v7M20 10v11M4 18v3M8 14v7"/><path d="m22 3-8.65 8.65a.5.5 0 0 1-.7 0L9.35 8.35a.5.5 0 0 0-.7 0L2 15"/></symbol>
+    <symbol id="i-file-chart" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 18v-2M12 18v-4M16 18v-6"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h.01M12 15h.01M16 15h.01"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></symbol>
+    <symbol id="i-calculator" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8M16 14v4M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></symbol>
+  </svg>
+
+  <!-- ── HEADER ───────────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="?segmento=solo" aria-label="TL Barber, início">
+        <img class="brand-logo" src="assets/tl-logo.png" alt="Logo TL Barber: T dourado e navalha formando o L" width="360" height="353" />
+        <span class="brand-name">TL Barber<small>Sistema de Gestão para Barbearias</small></span>
       </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="btn btn-ghost" data-goto="solucoes">A solução</button>
+        <button class="btn btn-ghost" data-goto="processo">Como funciona</button>
+        <button class="btn btn-ghost" data-goto="modulos">Módulos</button>
+        <button class="btn btn-ghost" data-goto="simular">Simulador</button>
+      </nav>
+      <button class="btn btn-outline header-cta" data-goto="cadastro">Vamos conversar <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+      <button class="btn btn-ghost btn-icon mobile-menu" aria-label="Abrir menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
     </div>
-  </nav>
+  </header>
 
-  <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
-  <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="container hero-inner">
-      <div class="badge">Sistema de Gestão para Barbearias</div>
-      <h1 class="hero-title">
-        Sua barbearia merece<br />
-        <span class="gold">gestão de verdade.</span>
-      </h1>
-      <p class="hero-sub">
-        Controle de caixa, relatórios automáticos, profissionais e inteligência artificial —
-        tudo em um sistema whitelabel feito do zero para barbearias.
-        Do profissional solo à rede com múltiplas unidades.
-      </p>
-      <div class="hero-ctas">
-        <a href="https://wa.me/5511948455946?text=Olá%2C%20quero%20conhecer%20o%20Telovis%20Barber"
-           target="_blank" class="btn btn-gold btn-lg">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quero uma proposta
-        </a>
-        <a href="#planos" class="btn btn-ghost btn-lg">Ver planos</a>
-      </div>
-      <div class="hero-trust">
-        <span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Sem contrato de fidelidade</span>
-        <span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Sistema com a sua marca</span>
-        <span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Proposta sob medida, sem tabela fechada</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PROVA SOCIAL ──────────────────────────────────────────────────────── -->
-  <section class="stats-strip">
-    <div class="container stats-inner">
-      <div class="stat-item">
-        <span class="stat-value">+8.500</span>
-        <span class="stat-label">vendas processadas na plataforma</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-value">2024</span>
-        <span class="stat-label">em operação, com histórico real de caixa</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-value">100%</span>
-        <span class="stat-label">whitelabel — a marca é sempre a sua</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PROBLEMA ──────────────────────────────────────────────────────────── -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-label">O problema</div>
-      <h2 class="section-title">A maioria das barbearias ainda gerencia<br />no caderno, na planilha ou no achismo.</h2>
-      <div class="pain-grid">
-        <div class="pain-card">
-          <div class="pain-icon">📋</div>
-          <h3>Caixa no caderno ou na planilha</h3>
-          <p>Caderno some, planilha não fecha, e qualquer erro vira prejuízo invisível no final do mês.</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">📊</div>
-          <h3>Sem relatório real</h3>
-          <p>Não saber qual serviço mais vende, qual barbeiro performa menos, impede crescimento.</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">👥</div>
-          <h3>Controle de equipe no olho</h3>
-          <p>Comissão calculada na mão, sem histórico, gera conflito e perda de talento.</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">📱</div>
-          <h3>Sistemas genéricos que não encaixam</h3>
-          <p>Ferramentas criadas para outros negócios forçam adaptações que nunca funcionam de verdade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SOLUÇÃO ───────────────────────────────────────────────────────────── -->
-  <section class="section" id="solucao">
-    <div class="container">
-      <div class="section-label">A solução</div>
-      <h2 class="section-title">Um sistema feito <span class="gold">só para barbearia.</span></h2>
-      <p class="section-sub">
-        O Telovis Barber é um sistema de gestão whitelabel desenvolvido especificamente para
-        o modelo de negócio de barbearia — com a sua marca, do seu jeito.
-      </p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">💰</div>
-          <h3>Controle de Caixa</h3>
-          <p>Você sabe exatamente quanto entrou, o que foi serviço, produto ou barbeiro — todo dia, sem depender de planilha ou caderno.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📈</div>
-          <h3>Relatórios Gerenciais</h3>
-          <p>Enxergue o que realmente move o faturamento da sua barbearia, sem precisar caçar número nem fazer conta na mão.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">✂️</div>
-          <h3>Gestão de Profissionais</h3>
-          <p>Comissão calculada certa, com histórico de cada barbeiro — sem gerar discussão nem depender da memória de ninguém.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤖</div>
-          <h3>Alertas e IA</h3>
-          <p>Avisos importantes chegam direto no seu WhatsApp, e a inteligência artificial vai assumindo tarefas do dia a dia — sem você precisar ficar olhando tela.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🏪</div>
-          <h3>Multi-unidade</h3>
-          <p>Acompanhe a rede inteira de um lugar só, sem perder o controle fino de cada unidade individualmente.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Whitelabel</h3>
-          <p>O sistema leva o nome e a cara da sua barbearia. Seus clientes e equipe veem a sua marca.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── DIFERENCIAIS ──────────────────────────────────────────────────────── -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-label">Por que Telovis Barber</div>
-      <h2 class="section-title">Não somos um sistema genérico<br />com logo trocado.</h2>
-      <p class="section-sub">
-        Existe sistema de agenda pra qualquer negócio por aí. O Telovis Barber nasceu dentro
-        de uma barbearia de verdade, para resolver o problema de uma barbearia de verdade.
-      </p>
-      <div class="diff-grid">
-        <div class="diff-card">
-          <div class="diff-icon">🧬</div>
-          <h3>Nascido dentro de uma barbearia</h3>
-          <p>Não é uma ferramenta genérica adaptada. Cada tela foi pensada a partir da rotina real de quem corta cabelo e fecha caixa todo dia.</p>
-        </div>
-        <div class="diff-card">
-          <div class="diff-icon">🎨</div>
-          <h3>100% com a sua marca</h3>
-          <p>Whitelabel de verdade: sua equipe e seus clientes veem o nome e a identidade da sua barbearia, não a nossa.</p>
-        </div>
-        <div class="diff-card">
-          <div class="diff-icon">🤝</div>
-          <h3>Suporte direto com quem constrói</h3>
-          <p>Sem central de atendimento terceirizada. Você fala com o time que desenvolve o sistema.</p>
-        </div>
-        <div class="diff-card">
-          <div class="diff-icon">📊</div>
-          <h3>Validado com dados reais</h3>
-          <p>Não é protótipo. É um sistema em operação real, com milhares de vendas já processadas na plataforma.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── IMPLANTAÇÃO E MENTORIA ───────────────────────────────────────────── -->
-  <section class="section" id="mentoria">
-    <div class="container">
-      <div class="section-label">Você não fica sozinho</div>
-      <h2 class="section-title">Sistema é só metade. A outra metade é <span class="gold">gente ajudando você a crescer.</span></h2>
-      <p class="section-sub">
-        Na implantação você tem treinamento de verdade — e depois, quem já viveu o dia a dia
-        de barbearia te ajuda a crescer o negócio, não só a usar uma tela.
-      </p>
-      <div class="mentors-grid">
-        <div class="mentor-card">
-          <div class="mentor-avatar">JA</div>
-          <div class="mentor-role">Gestor Comercial</div>
-          <h3 class="mentor-name">José Alef</h3>
-          <p>Acompanha a implantação e treina você e sua equipe a usar o sistema no dia a dia — sem enrolação, direto ao ponto.</p>
-        </div>
-        <div class="mentor-card">
-          <div class="mentor-avatar">TL</div>
-          <div class="mentor-role">Barbeiro e dono de barbearia</div>
-          <h3 class="mentor-name">Thieco Leandro</h3>
-          <p>Dá mentoria de crescimento para donos e gestores de barbearia — de quem já passou pelo mesmo desafio de gerir o negócio no dia a dia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PLANOS ────────────────────────────────────────────────────────────── -->
-  <section class="section section-dark" id="planos">
-    <div class="container">
-      <div class="section-label">Planos</div>
-      <h2 class="section-title">Escale no seu ritmo.</h2>
-      <p class="section-sub">
-        Cada plano é montado com as funcionalidades que fazem sentido para o seu momento —
-        sem tabela fechada. Você conta o que precisa, a gente monta a proposta.
-      </p>
-      <div class="plans-grid">
-
-        <div class="plan-card">
-          <div class="plan-header">
-            <div class="plan-tag">Nível 1</div>
-            <h3 class="plan-name">Gestão Essencial</h3>
-            <p class="plan-desc">Para quem quer controle real do caixa e visão financeira blindada.</p>
+  <main>
+    <!-- ── HERO ───────────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> GESTÃO QUE CABE NA SUA BARBEARIA</div>
+          <h1><span data-copy="title">Sua barbearia, sob controle.</span><br /><span class="hl" data-copy="highlight">Do caixa à cadeira.</span></h1>
+          <p data-copy="description">Caixa do dia, comissões, relatórios, agenda e IA num sistema feito do zero para barbearia — com a sua marca.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary hero-cta" data-goto="cadastro">Quero falar sobre minha barbearia <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+            <button class="btn btn-ghost hero-finder-link" data-goto="simular">Simule o faturamento da sua cadeira <svg class="i i-sm"><use href="#i-arrow-down"/></svg></button>
           </div>
-          <div class="plan-fit">
-            <span class="fit-label">Ideal para</span>
-            <span class="fit-value">barbearia solo ou primeira unidade</span>
+          <div class="hero-reassurance">
+            <span><svg class="i"><use href="#i-check"/></svg> Sistema com a sua marca</span>
+            <span><svg class="i"><use href="#i-check"/></svg> Sem fidelidade</span>
+            <span><svg class="i"><use href="#i-check"/></svg> Proposta sob medida</span>
           </div>
-          <ul class="plan-features">
-            <li>Caixa sob controle, dia após dia</li>
-            <li>Fechamento diário sem planilha</li>
-            <li>Equipe organizada, com histórico</li>
-            <li>Relatórios essenciais para decidir</li>
-            <li>Sistema com a sua marca</li>
-          </ul>
-          <a href="https://wa.me/5511948455946?text=Olá%2C%20tenho%20interesse%20no%20plano%20Gestão%20Essencial%20do%20Telovis%20Barber"
-             target="_blank" class="btn btn-outline btn-full">
-            Falar sobre esse plano
-          </a>
         </div>
 
-        <div class="plan-card plan-card-featured">
-          <div class="plan-badge">Mais contratado</div>
-          <div class="plan-header">
-            <div class="plan-tag">Nível 2</div>
-            <h3 class="plan-name">Gestão Pro</h3>
-            <p class="plan-desc">Relatórios automáticos no WhatsApp e alertas gerenciais em tempo real.</p>
+        <!-- Órbita -->
+        <div class="hero-orbit" aria-label="Módulos conectados do TL Barber">
+          <div class="orbit-glow"></div>
+          <svg class="orbit-paths" viewBox="0 0 500 450" aria-hidden="true"><ellipse cx="250" cy="225" rx="210" ry="115" transform="rotate(-30 250 225)"/><ellipse cx="250" cy="225" rx="200" ry="150" transform="rotate(35 250 225)"/><path d="M250 75V110M250 340V375M85 225H120M380 225H415"/></svg>
+          <div class="orbit-center">
+            <img src="assets/tl-logo.png" alt="Logo TL Barber" width="360" height="353" />
+            <span>TL BARBER</span>
           </div>
-          <div class="plan-fit">
-            <span class="fit-label">Ideal para</span>
-            <span class="fit-value">equipe de barbeiros com comissão ativa</span>
-          </div>
-          <ul class="plan-features">
-            <li>Tudo do Essencial</li>
-            <li>Alertas automáticos direto no WhatsApp</li>
-            <li>Visão gerencial mais profunda</li>
-            <li>Acompanhamento de metas da equipe</li>
-            <li>Suporte com prioridade</li>
-          </ul>
-          <a href="https://wa.me/5511948455946?text=Olá%2C%20tenho%20interesse%20no%20plano%20Gestão%20Pro%20do%20Telovis%20Barber"
-             target="_blank" class="btn btn-gold btn-full">
-            Falar sobre esse plano
-          </a>
+          <div class="orbit-node orbit-top"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-wallet"/></svg></span><span>Caixa &amp; Comissões em Tempo Real</span></button></div>
+          <div class="orbit-node orbit-left"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-calendar"/></svg></span><span>Agenda &amp; Atendimento</span></button></div>
+          <div class="orbit-node orbit-bottom"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-file-chart"/></svg></span><span>Relatórios e IA para o Dono</span></button></div>
         </div>
 
-        <div class="plan-card">
-          <div class="plan-header">
-            <div class="plan-tag">Nível 3</div>
-            <h3 class="plan-name">IA Elite</h3>
-            <p class="plan-desc">Agenda inteligente, multi-unidade e o próximo passo em automação de atendimento.</p>
-          </div>
-          <div class="plan-fit">
-            <span class="fit-label">Ideal para</span>
-            <span class="fit-value">rede com múltiplas unidades</span>
-          </div>
-          <ul class="plan-features">
-            <li>Tudo do Pro</li>
-            <li>Agenda inteligente, interna e externa</li>
-            <li>Visão consolidada de toda a rede</li>
-            <li>Automação de atendimento com IA <em>(em breve)</em></li>
-            <li>Suporte prioritário dedicado</li>
-          </ul>
-          <a href="https://wa.me/5511948455946?text=Olá%2C%20tenho%20interesse%20no%20plano%20IA%20Elite%20do%20Telovis%20Barber"
-             target="_blank" class="btn btn-outline btn-full">
-            Falar sobre esse plano
-          </a>
-        </div>
-
+        <div class="hero-caption"><span class="tiny-cross">+</span> SUA CADEIRA. SEU CAIXA. SEU SISTEMA.</div>
+        <button class="btn btn-ghost btn-icon scroll-arrow" data-goto="solucoes" aria-label="Ver benefícios"><svg class="i"><use href="#i-arrow-down"/></svg></button>
       </div>
-      <p class="plans-note">
-        Não trabalhamos com tabela de preço fixa publicada — cada proposta é montada conforme
-        o número de unidades e as funcionalidades que você realmente vai usar.
-        <a href="https://wa.me/5511948455946?text=Olá%2C%20quero%20entender%20melhor%20os%20planos%20do%20Telovis%20Barber"
-           target="_blank">Fale conosco e receba uma proposta personalizada.</a>
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── PARA QUEM ─────────────────────────────────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-label">Para quem é</div>
-      <h2 class="section-title">Do profissional solo<br /><span class="gold">à rede de barbearias.</span></h2>
-      <div class="audience-grid">
-        <div class="audience-card">
-          <div class="audience-icon">✂️</div>
-          <h3>Barbearia solo</h3>
-          <p>Você cuida de tudo sozinho e precisa de controle financeiro sem complicação. O Essencial foi feito para você.</p>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">👥</div>
-          <h3>Equipe de barbeiros</h3>
-          <p>Você tem uma equipe, paga comissão e quer relatório de performance sem precisar fazer na mão.</p>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">🏢</div>
-          <h3>Rede com múltiplas unidades</h3>
-          <p>Você tem ou planeja ter mais de uma unidade e precisa de visão consolidada com controle individual.</p>
+    <!-- ── SEGMENTOS ──────────────────────────────────────────────────────── -->
+    <div class="segment-band">
+      <div class="container segment-inner">
+        <span>CADA BARBEARIA TEM UM MOMENTO.</span>
+        <div class="segment-options" role="group" aria-label="Escolha o seu momento">
+          <button class="btn btn-ghost segment-button" data-segment="solo">Barbearia solo</button>
+          <button class="btn btn-ghost segment-button" data-segment="equipe">Equipe de barbeiros</button>
+          <button class="btn btn-ghost segment-button" data-segment="rede">Rede de unidades</button>
+          <button class="btn btn-ghost segment-button" data-segment="abrindo">Abrindo a barbearia</button>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ── DEPOIMENTOS ───────────────────────────────────────────────────────── -->
-  <section class="section section-dark" id="depoimentos">
-    <div class="container">
-      <div class="section-label">Quem usa</div>
-      <h2 class="section-title">Resultados reais.</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Antes eu fechava o caixa todo dia no caderno e nunca batia. Hoje tenho o DRE na tela em segundos. Mudou completamente como eu gerencio o negócio."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">TL</div>
-            <div>
-              <strong>Thieco Leandro</strong>
-              <span>Proprietário — Barbearia Thieco Leandro</span>
+    <!-- ── BENEFÍCIOS ─────────────────────────────────────────────────────── -->
+    <section class="benefits-section" id="solucoes">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow section-eyebrow"><span class="line-mark"></span> FEITO PARA BARBEARIA</div>
+            <h2>Não é só sobre corte.<br />É sobre o seu próximo nível.</h2>
+          </div>
+          <p>O sistema certo não muda o jeito da sua barbearia.<br class="desktop-break" /> Ele faz o seu jeito funcionar melhor.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-top"><span class="benefit-icon"><svg class="i i-lg"><use href="#i-puzzle"/></svg></span><span class="item-number">/01</span></div>
+            <h3>Nascido dentro de uma barbearia</h3>
+            <p>Cada tela foi pensada a partir da rotina real de quem corta cabelo e fecha caixa todo dia. Nada de adaptar sua barbearia a um sistema genérico.</p>
+            <svg class="i benefit-arrow"><use href="#i-move-up-right"/></svg>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-top"><span class="benefit-icon"><svg class="i i-lg"><use href="#i-workflow"/></svg></span><span class="item-number">/02</span></div>
+            <h3>Menos caderno. Mais controle.</h3>
+            <p>Venda registrada em segundos, comissão calculada certa e caixa fechado sem planilha — sem discussão com a equipe no fim do mês.</p>
+            <svg class="i benefit-arrow"><use href="#i-move-up-right"/></svg>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-top"><span class="benefit-icon"><svg class="i i-lg"><use href="#i-layers"/></svg></span><span class="item-number">/03</span></div>
+            <h3>Pronto para a próxima unidade</h3>
+            <p>Comece com uma cadeira e cresça para uma rede. Visão consolidada de tudo, sem perder o controle fino de cada unidade.</p>
+            <svg class="i benefit-arrow"><use href="#i-move-up-right"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── COMO FUNCIONA ──────────────────────────────────────────────────── -->
+    <section class="process-section" id="processo">
+      <div class="container process-layout">
+        <div>
+          <div class="eyebrow section-eyebrow"><span class="line-mark"></span> DA IMPLANTAÇÃO AO CRESCIMENTO</div>
+          <h2>Completo por dentro.<br /><span class="text-muted">Simples na cadeira.</span></h2>
+          <p class="section-description">Sistema é só metade. A outra metade é gente ajudando<br class="desktop-break" /> você a crescer — de quem já viveu o dia a dia de barbearia.</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step"><span class="step-number">01</span><div><h3>Primeiro, a gente escuta.</h3><p>Entendemos seus serviços, sua equipe, suas comissões e o que precisa mudar.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+          <div class="process-step"><span class="step-number">02</span><div><h3>Depois, implantamos com você.</h3><p>José Alef treina você e sua equipe, e trazemos o histórico do caderno ou da planilha.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+          <div class="process-step"><span class="step-number">03</span><div><h3>Então, você cresce com mentoria.</h3><p>Thieco Leandro, barbeiro e dono de barbearia, orienta o crescimento do seu negócio.</p></div><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MÓDULOS ────────────────────────────────────────────────────────── -->
+    <section class="projects-section" id="modulos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow section-eyebrow"><span class="line-mark"></span> DO CAIXA À INTELIGÊNCIA</div>
+            <h2>Um sistema completo.<br />Cada módulo com um propósito.</h2>
+          </div>
+          <p>Conheça o que o TL Barber faz pela sua barbearia — tudo com a sua marca.</p>
+        </div>
+
+        <div class="project-filters" role="group" aria-label="Filtrar módulos">
+          <button class="btn btn-default" data-filter="Todos" aria-pressed="true">Todos</button>
+          <button class="btn btn-outline" data-filter="Gestão" aria-pressed="false">Gestão</button>
+          <button class="btn btn-outline" data-filter="IA" aria-pressed="false">Inteligência Artificial</button>
+          <span class="project-count" aria-live="polite">6 módulos</span>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card" data-type="Gestão">
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Operação diária</span><svg class="i"><use href="#i-wallet"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Registrar a venda</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Separar serviço, produto e barbeiro</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Caixa fechado no fim do dia</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-wallet"/></svg></span><span class="project-type">GESTÃO</span></div>
+            <span class="project-category">Financeiro</span>
+            <h3>Caixa do dia</h3>
+            <p>Você sabe exatamente quanto entrou e de onde veio — todo dia, sem caderno.</p>
+            <ul><li>Venda com desconto</li><li>Formas de pagamento</li><li>Fechamento diário</li></ul>
+          </article>
+
+          <article class="project-card" data-type="Gestão">
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Equipe</span><svg class="i"><use href="#i-scissors"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Definir regra de comissão</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Calcular a cada atendimento</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Extrato claro por barbeiro</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-scissors"/></svg></span><span class="project-type">GESTÃO</span></div>
+            <span class="project-category">Profissionais</span>
+            <h3>Comissões</h3>
+            <p>Comissão certa e com histórico — sem conta na mão e sem conflito na equipe.</p>
+            <ul><li>Serviço e produto</li><li>Totais por profissional</li><li>Painel do barbeiro</li></ul>
+          </article>
+
+          <article class="project-card" data-type="Gestão">
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Visão do dono</span><svg class="i"><use href="#i-chart"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Faturamento por período</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Serviços e barbeiros que mais vendem</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>DRE na tela em segundos</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-chart"/></svg></span><span class="project-type">GESTÃO</span></div>
+            <span class="project-category">Relatórios</span>
+            <h3>Relatórios &amp; DRE</h3>
+            <p>Enxergue o que realmente move o faturamento, sem caçar número.</p>
+            <ul><li>Ranking de serviços</li><li>Performance da equipe</li><li>DRE</li></ul>
+          </article>
+
+          <article class="project-card" data-type="Gestão">
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Atendimento</span><svg class="i"><use href="#i-calendar"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Cliente escolhe horário e barbeiro</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Sinal para evitar falta</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Agenda cheia e organizada</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-calendar"/></svg></span><span class="project-type">GESTÃO</span></div>
+            <span class="project-category">Agenda</span>
+            <h3>Agenda inteligente</h3>
+            <p>Agenda interna e externa, por barbeiro, com menos furo de horário.</p>
+            <ul><li>Agendamento online</li><li>Sinal anti-no-show</li><li>Por profissional</li></ul>
+          </article>
+
+          <article class="project-card" data-type="IA">
+            <div class="project-preview preview-ai"><div class="preview-heading"><span class="preview-status"></span><span>Assistente executivo</span><svg class="i"><use href="#i-bot"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Você pergunta em português</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>A IA lê os números da barbearia</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Resposta com dados reais</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-bot"/></svg></span><span class="project-type">INTELIGÊNCIA ARTIFICIAL</span></div>
+            <span class="project-category">Chat executivo</span>
+            <h3>IA para o dono</h3>
+            <p>Pergunte "quanto faturei essa semana?" e receba a resposta dentro do sistema.</p>
+            <ul><li>Chat dentro do sistema</li><li>Alertas no WhatsApp</li><li>Insights automáticos</li></ul>
+          </article>
+
+          <article class="project-card" data-type="Gestão">
+            <div class="project-preview"><div class="preview-heading"><span class="preview-status"></span><span>Sua marca</span><svg class="i"><use href="#i-store"/></svg></div><div class="preview-flow"><div class="preview-flow-step"><span class="preview-node">01</span><span>Nome e identidade da sua barbearia</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node">02</span><span>Uma ou várias unidades</span><svg class="i preview-connector"><use href="#i-arrow-right"/></svg></div><div class="preview-flow-step"><span class="preview-node"><svg class="i"><use href="#i-check"/></svg></span><span>Rede inteira num login só</span></div></div><div class="preview-baseline"><span></span><span></span><span></span><span></span></div></div>
+            <div class="project-card-top"><span class="project-icon"><svg class="i i-lg"><use href="#i-store"/></svg></span><span class="project-type">GESTÃO</span></div>
+            <span class="project-category">Whitelabel</span>
+            <h3>Multi-unidade com a sua marca</h3>
+            <p>Sua equipe e seus clientes veem a sua barbearia, não a nossa.</p>
+            <ul><li>Whitelabel</li><li>Visão consolidada</li><li>Controle por filial</li></ul>
+          </article>
+        </div>
+
+        <div class="projects-bottom">
+          <p>Sua barbearia é única.<strong> Seu sistema também.</strong></p>
+          <button class="btn btn-outline" data-goto="cadastro">Vamos montar sua proposta <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROVA ──────────────────────────────────────────────────────────── -->
+    <section class="trust-section">
+      <div class="container trust-layout">
+        <div class="trust-statement">
+          <svg class="i quote-symbol"><use href="#i-quote"/></svg>
+          <h2>Antes eu fechava o caixa no caderno e nunca batia. <span>Hoje tenho o DRE na tela em segundos.</span></h2>
+          <div class="trust-signature"><span class="t-avatar">TL</span><div>Thieco Leandro<small>BARBEIRO E PROPRIETÁRIO — BARBEARIA THIECO LEANDRO</small></div></div>
+        </div>
+        <div class="proof-placeholder">
+          <svg class="i i-lg"><use href="#i-check-check"/></svg>
+          <div class="eyebrow">VALIDADO NA CADEIRA</div>
+          <h3>+8.500 vendas processadas desde 2024.</h3>
+          <p>Não é protótipo. O TL Barber nasceu e roda numa barbearia de verdade, com histórico real de caixa.</p>
+          <span class="proof-note">Em operação contínua</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SIMULADOR ──────────────────────────────────────────────────────── -->
+    <section class="cmv-section" id="simular">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow section-eyebrow"><svg class="i i-sm"><use href="#i-calculator"/></svg> FATURAMENTO POR CADEIRA</div>
+            <h2>Quanto cada cadeira<br />fatura no mês?</h2>
+          </div>
+          <p>Comissão, ticket médio e agenda cheia mexem direto no seu caixa. Como isso se traduz nos seus números?</p>
+        </div>
+        <div class="cmv-layout">
+          <div>
+            <h3>Simule uma cadeira da sua barbearia</h3>
+            <p class="cmv-caption">Os números iniciais são apenas um exemplo, não dados de clientes.</p>
+            <div class="cmv-inputs">
+              <label>Atendimentos por dia<input type="number" min="0" step="1" inputmode="numeric" name="atendimentos" value="12" /></label>
+              <label>Ticket médio (R$)<input type="number" min="0" step="0.01" inputmode="decimal" name="ticket" value="55" /></label>
+              <label>Dias trabalhados no mês<input type="number" min="0" max="31" step="1" inputmode="numeric" name="dias" value="24" /></label>
+              <label>Comissão do barbeiro (%)<input type="number" min="0" max="100" step="0.5" inputmode="decimal" name="comissao" value="40" /></label>
+            </div>
+            <p class="cmv-formula">Faturamento = atendimentos × ticket médio × dias</p>
+          </div>
+          <div class="cmv-result" aria-live="polite">
+            <div data-result="ok">
+              <span>FATURAMENTO ESTIMADO DA CADEIRA</span>
+              <strong data-out="faturamento">R$ 0,00</strong>
+              <div class="cmv-ratio"><b data-out="comissao">R$ 0,00</b><span>de comissão para o barbeiro no mês</span></div>
+              <div class="cmv-remainder"><span>Fica para a barbearia</span><b data-out="casa">R$ 0,00</b></div>
+              <p>Esse saldo não é lucro: ainda faltam aluguel, produtos, impostos e outras despesas. Com o TL Barber, esse número aparece de verdade, todo dia.</p>
+            </div>
+            <p data-result="erro" role="alert" hidden>Informe valores não negativos e uma comissão entre 0 e 100%.</p>
+            <a class="btn btn-primary" data-sim-cta href="#" target="_blank" rel="noopener noreferrer">Quero acompanhar meus números <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+        </div>
+        <p class="cmv-caption cmv-privacy">Simulação ilustrativa. Os valores não são salvos nem enviados ao preencher. Ao abrir o WhatsApp, apenas o resultado acompanha sua mensagem.</p>
+      </div>
+    </section>
+
+    <!-- ── CONTATO ────────────────────────────────────────────────────────── -->
+    <section class="contact-section" id="cadastro">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <div class="eyebrow section-eyebrow"><span class="line-mark"></span> SUA PROPOSTA COMEÇA AQUI</div>
+          <h2 data-copy="offer">Controle de verdade, mesmo trabalhando sozinho.</h2>
+          <p>Conte como funciona a sua barbearia. Em até 24h você recebe uma proposta sob medida para o seu momento — sem tabela fechada.</p>
+          <div class="contact-list">
+            <span><svg class="i"><use href="#i-check-check"/></svg> Proposta sob medida em até 24h</span>
+            <span><svg class="i"><use href="#i-palette"/></svg> Sistema com a sua marca</span>
+            <span><svg class="i"><use href="#i-scissors"/></svg> Sem fidelidade, sem taxa surpresa</span>
+          </div>
+          <div class="direct-contact">
+            <h3>Converse pelo WhatsApp</h3>
+            <div class="contact-buttons">
+              <a class="btn btn-outline" href="https://wa.me/5511954079335?text=Ol%C3%A1!%20Quero%20conhecer%20o%20TL%20Barber." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp (11) 95407-9335"><svg class="i"><use href="#i-message"/></svg>(11) 95407-9335<svg class="i i-sm"><use href="#i-arrow-up-right"/></svg></a>
+              <a class="btn btn-outline" href="https://wa.me/5511953445647?text=Ol%C3%A1!%20Quero%20conhecer%20o%20TL%20Barber." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp (11) 95344-5647"><svg class="i"><use href="#i-message"/></svg>(11) 95344-5647<svg class="i i-sm"><use href="#i-arrow-up-right"/></svg></a>
             </div>
           </div>
+          <div class="contact-note"><svg class="i"><use href="#i-sparkles"/></svg><span>Você cuida da cadeira.<br /><strong>A gente cuida da gestão.</strong></span></div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "O sistema com minha marca deixou a barbearia mais profissional. Minha equipe usa direto pelo celular e eu acompanho tudo em tempo real."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MB</div>
-            <div>
-              <strong>Marcos B.</strong>
-              <span>Proprietário — Barbearia Black, São Paulo/SP</span>
-            </div>
+
+        <form class="lead-form" novalidate>
+          <div class="form-title"><span>VAMOS ENTENDER SUA BARBEARIA</span><svg class="i"><use href="#i-arrow-up-right"/></svg></div>
+          <div class="form-grid">
+            <label>Seu nome<input name="nome" placeholder="Como podemos te chamar?" autocomplete="name" required minlength="2" maxlength="100" /></label>
+            <label>Barbearia<input name="barbearia" placeholder="Nome da sua barbearia" autocomplete="organization" required minlength="2" maxlength="150" /></label>
+            <label>Cidade <span class="optional">(opcional)</span><input name="cidade" placeholder="Ex.: São Paulo/SP" autocomplete="address-level2" maxlength="80" /></label>
+            <label>Barbeiros na equipe
+              <select name="equipe">
+                <option>Só eu</option>
+                <option>2 a 4</option>
+                <option>5 a 10</option>
+                <option>Mais de 10 / várias unidades</option>
+              </select>
+            </label>
           </div>
-        </div>
+          <details class="lead-optional"><summary>Contar mais sobre a barbearia (opcional)</summary><label><span data-copy="need">O que mais pesa na sua rotina hoje?</span><textarea name="mensagem" placeholder="Caixa, comissões, agenda, relatórios…" maxlength="1500" rows="3"></textarea></label></details>
+          <label class="consent"><input name="consent" type="checkbox" required /><span>Autorizo o TL Barber a entrar em contato sobre minha barbearia. Meus dados serão usados apenas para este atendimento.</span></label>
+          <p class="form-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary submit-button">Quero falar sobre minha barbearia <svg class="i"><use href="#i-arrow-up-right"/></svg></button>
+          <p class="form-footnote"><svg class="i i-xs"><use href="#i-lock"/></svg> Ao enviar, abrimos o WhatsApp com sua mensagem. Nada fica salvo neste site.</p>
+        </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ── FAQ ───────────────────────────────────────────────────────────────── -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-label">Dúvidas frequentes</div>
-      <h2 class="section-title">Perguntas que você provavelmente tem.</h2>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Quanto custa o sistema?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Não temos tabela de preço fixa publicada. O valor depende do número de unidades e das funcionalidades que fazem sentido para o seu momento — falamos com você e montamos uma proposta sob medida em até 24h, sem enrolação.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Funciona no celular?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sim. O sistema é acessado pelo navegador, funciona em celular, tablet e computador, sem precisar instalar nada.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            E se eu tiver mais de uma unidade?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>O sistema tem modo multi-unidade, com visão consolidada da rede e controle individual por filial, no mesmo login.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Como funciona o suporte?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Suporte direto com o time que desenvolve o sistema, pelo WhatsApp — sem central de atendimento genérica.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Tem contrato de fidelidade?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Não. Sem fidelidade e sem taxa de adesão surpresa — as condições são combinadas com transparência na proposta.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Posso migrar meus dados de caderno ou planilha?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sim, ajudamos na migração do histórico de vendas e cadastro de profissionais durante a implantação.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CTA FINAL ─────────────────────────────────────────────────────────── -->
-  <section class="section cta-section">
-    <div class="cta-glow"></div>
-    <div class="container cta-inner">
-      <h2 class="cta-title">Pronto para colocar<br /><span class="gold">a gestão no centro da sua barbearia?</span></h2>
-      <p class="cta-sub">
-        Fale com a gente agora. Em menos de 24 horas você recebe uma proposta
-        sob medida para o momento da sua barbearia.
-      </p>
-      <a href="https://wa.me/5511948455946?text=Olá%2C%20quero%20conhecer%20o%20Telovis%20Barber%20e%20receber%20uma%20proposta"
-         target="_blank" class="btn btn-gold btn-xl">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero minha proposta agora
-      </a>
-      <p class="cta-note">Resposta em até 24h • Sem compromisso</p>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="logo">Telovis <span class="logo-accent">Barber</span></span>
-      <p class="footer-copy">© 2026 Telovis Barber. Todos os direitos reservados.</p>
+      <a class="brand" href="?segmento=solo" aria-label="TL Barber, início">
+        <img class="brand-logo" src="assets/tl-logo.png" alt="" width="360" height="353" />
+        <span class="brand-name">TL Barber</span>
+      </a>
+      <span>© 2026 TL Barber. Um produto Telovis Tech · Desenvolvido por Willians Santana.</span>
     </div>
   </footer>
 
