@@ -267,7 +267,9 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .device-phone img { border-radius: 20px; }
 .wl-showcase figcaption { position: absolute; left: 0; bottom: 0; font-size: 10px; letter-spacing: .4px; color: var(--muted-foreground); }
 .wl-second { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--border); }
-.wl-phones { margin: 0 auto; max-width: 660px; }
+.wl-phones { margin: 0 auto; max-width: 440px; }
+.wl-phones .bk-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.wl-phones .bk-phone img { aspect-ratio: 540 / 1116; object-fit: cover; object-position: top; }
 .wl-phones figcaption { margin-top: 18px; font-size: 10px; letter-spacing: .4px; color: var(--muted-foreground); text-align: center; }
 
 .bk-section { padding: 76px 0; background: var(--muted); border-bottom: 1px solid var(--border); overflow: hidden; }
