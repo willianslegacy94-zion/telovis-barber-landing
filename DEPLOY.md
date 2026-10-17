@@ -2,6 +2,9 @@
 
 ## Lovable (igual à LP da TeloVis Tech)
 
+**Produção:** **https://telovispro.com** (DNS na Cloudflare,
+`@` e `www` em registro A para `185.158.133.1`, o IP da Lovable, igual ao telovistech.com).
+
 O projeto tem um `package.json` com Vite só para a Lovable conseguir publicar
 (`npm run build` → `dist/`). O fluxo é: enviar para o remote `lovable` (o
 repositório que a Lovable sincroniza) e `origin`, e depois clicar em
