@@ -1,6 +1,23 @@
-# Deploy — Landing Telovis Barber
+# Deploy — Landing TeloVis Pro
 
-Site estático (HTML + CSS + JS vanilla, sem build). Fica publicado em
+## Lovable (igual à LP da TeloVis Tech)
+
+O projeto tem um `package.json` com Vite só para a Lovable conseguir publicar
+(`npm run build` → `dist/`). O fluxo é: enviar para o remote `lovable` (o
+repositório que a Lovable sincroniza) e `origin`, e depois clicar em
+**Publicar → Update** na Lovable.
+
+```bash
+git push lovable main && git push origin main
+```
+
+Testar o build local: `npm install && npm run build && npx vite preview`.
+
+---
+
+## Alternativa: VPS (estático)
+
+Site estático (HTML + CSS + JS vanilla, sem build na VPS). Fica publicado em
 `https://kernellwc.online/vendas/`, servido direto pelo Nginx do host da VPS
 `kernellwc.online` — **não roda em container, não tem processo pra reiniciar**.
 Atualizar é só atualizar os arquivos em disco.

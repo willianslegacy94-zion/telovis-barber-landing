@@ -3,7 +3,7 @@
 // são lidas do próprio DOM no carregamento (main.js) e não se repetem em `pt`.
 // Aqui, em `pt`, ficam só os textos gerados pelo JS (segmentos, simulador, form).
 // Valores podem ter HTML (<br>, <strong>, <span>): são aplicados via innerHTML.
-const I18N = {
+export const I18N = {
   pt: {
     'meta.title': 'TeloVis Pro | Gestão para salões, barbearias e estética',
     'meta.description': 'TeloVis Pro: caixa, comissões, relatórios, agenda e IA num sistema feito para salões de beleza, barbearias e clínicas de estética, com a sua marca. Do profissional autônomo à rede de unidades.',

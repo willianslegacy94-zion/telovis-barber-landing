@@ -1,3 +1,5 @@
+import { I18N } from './i18n.js';
+
 // Número que recebe o formulário e o simulador (o 2º contato fica só nos botões)
 const WHATSAPP = '5511954079335';
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
