@@ -321,6 +321,8 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .site-footer .brand-name { font-size: 18px; }
 .site-footer .brand-logo { height: 34px; }
 .footer-inner > span { color: var(--muted-foreground); font-size: 11px; }
+.footer-inner > span a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer-inner > span a:hover { color: var(--foreground); }
 
 @keyframes enter { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 

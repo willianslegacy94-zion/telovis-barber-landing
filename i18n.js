@@ -270,7 +270,7 @@ const I18N = {
     'f.waMoment': 'Stage',
     'f.waDetails': 'Details',
 
-    'ft.copy': '© 2026 TeloVis Pro. A Telovis Tech product · Built by Willians Santana.',
+    'ft.copy': '© 2026 TeloVis Pro. A <a href="https://telovistech.com/" target="_blank" rel="noopener">TeloVis Tech</a> product · CNPJ 51.960.551/0001-38 · Built by Willians Santana.',
   },
 
   es: {
@@ -491,6 +491,6 @@ const I18N = {
     'f.waMoment': 'Momento',
     'f.waDetails': 'Detalles',
 
-    'ft.copy': '© 2026 TeloVis Pro. Un producto de Telovis Tech · Desarrollado por Willians Santana.',
+    'ft.copy': '© 2026 TeloVis Pro. Un producto de <a href="https://telovistech.com/" target="_blank" rel="noopener">TeloVis Tech</a> · CNPJ 51.960.551/0001-38 · Desarrollado por Willians Santana.',
   },
 };
