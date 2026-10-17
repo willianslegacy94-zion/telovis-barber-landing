@@ -1,95 +1,49 @@
 # Deploy — Landing TeloVis Pro
 
-## Lovable (igual à LP da TeloVis Tech)
+**Produção:** https://telovispro.com, publicada pela **Lovable** (DNS na Cloudflare: `@` e `www` em
+registro A para `185.158.133.1`, o IP da Lovable, igual ao telovistech.com).
 
-**Produção:** **https://telovispro.com** (DNS na Cloudflare,
-`@` e `www` em registro A para `185.158.133.1`, o IP da Lovable, igual ao telovistech.com).
+O repositório tem dois remotes com o mesmo conteúdo:
 
-O projeto tem um `package.json` com Vite só para a Lovable conseguir publicar
-(`npm run build` → `dist/`). O fluxo é: enviar para o remote `lovable` (o
-repositório que a Lovable sincroniza) e `origin`, e depois clicar em
-**Publicar → Update** na Lovable.
+- `lovable` → `telovis-pro-canvas`, o repositório que a Lovable sincroniza
+- `origin` → `telovis-barber-landing`
+
+O fluxo é enviar para os dois e depois clicar em **Publicar → Update** na Lovable:
 
 ```bash
 git push lovable main && git push origin main
 ```
 
-Testar o build local: `npm install && npm run build && npx vite preview`.
+Não reescreva histórico já enviado (force push, rebase, amend): a Lovable perde o histórico do projeto.
 
----
+## Como a LP está montada
 
-## Alternativa: VPS (estático)
+O projeto é o template TanStack Start da Lovable, e a LP continua sendo HTML + CSS + JS vanilla:
 
-Site estático (HTML + CSS + JS vanilla, sem build na VPS). Fica publicado em
-`https://kernellwc.online/vendas/`, servido direto pelo Nginx do host da VPS
-`kernellwc.online` — **não roda em container, não tem processo pra reiniciar**.
-Atualizar é só atualizar os arquivos em disco.
+| O quê | Arquivo |
+|---|---|
+| Corpo da página (texto em PT) | `src/landing/page.html` |
+| Títulos, meta tags, fontes e CSS da página | `src/routes/index.tsx` |
+| Comportamento (idioma, segmentos, simulador, formulário → WhatsApp) | `src/landing/main.js` |
+| Textos em EN/ES e os textos gerados pelo JS | `src/landing/i18n.js` |
+| Estilos | `src/landing/landing.css` |
+| Logo e ícones | `public/assets/`, `public/favicon.ico` |
 
----
+O CSS do template (Tailwind, `src/styles.css`) só carrega nas telas de 404 e erro: na LP, o preflight
+e as variáveis `:root` dele colidiriam com `landing.css`.
 
-## Processo do dia a dia (depois do primeiro deploy)
-
-Sempre que mexer em `index.html`, `style.css` ou `main.js`:
-
-```bash
-# 1) local — commitar e enviar pro GitHub
-git add index.html style.css main.js
-git commit -m "..."
-git push origin main
-
-# 2) na VPS — puxar o que mudou
-ssh willians@2.24.117.12   # ou o alias configurado no seu SSH config
-cd /var/www/telovis-barber-landing
-git pull origin main
-```
-
-Não precisa de `nginx -t`, reload, build nem restart — o Nginx lê o arquivo do
-disco a cada request (`alias`, sem cache de arquivo configurado). O `git pull`
-já é o deploy inteiro.
-
-Repo é **público**, então o `git pull` na VPS não pede autenticação.
-
----
-
-## Primeiro deploy (ainda não feito)
-
-Na VPS `kernellwc.online` (mesma VPS do Telovis Barber/Brainiac/Kalel, ver
-`telovis-barber/deploy/RUNBOOK.md` no repo principal):
+## Rodar local
 
 ```bash
-sudo mkdir -p /var/www/telovis-barber-landing
-sudo chown $USER:$USER /var/www/telovis-barber-landing
-git clone https://github.com/willianslegacy94-zion/telovis-barber-landing.git /var/www/telovis-barber-landing
+npm install
+npm run dev
+npm run build && npm test
 ```
 
-Depois, aplicar a config do Nginx (já versionada em
-`telovis-barber/deploy/nginx-kernellwc.conf`, bloco `location /vendas/`):
+`npx vite preview` não roda essa build no Windows (a saída é para a Cloudflare); use `npm run dev`.
 
-```bash
-# copiar a versão atualizada do arquivo pra VPS (telovis-barber/deploy/nginx-kernellwc.conf)
-# substitui o /etc/nginx/sites-available/kernellwc.online já existente
-sudo nginx -t && sudo systemctl reload nginx
-```
+## VPS (kernellwc.online/vendas)
 
-Certbot já cobre `kernellwc.online`/`www.kernellwc.online` (feito no deploy do
-Telovis Barber) — `/vendas/` é um path do mesmo domínio, então o HTTPS já funciona sem
-passo extra.
-
-**Smoke test:**
-```bash
-curl -sI https://kernellwc.online/vendas/ | head -5
-curl -s https://kernellwc.online/vendas/style.css -o /dev/null -w "%{http_code}\n"
-```
-
----
-
-## Se algo quebrar
-
-```bash
-cd /var/www/telovis-barber-landing
-git log --oneline -5
-git checkout <hash-anterior>
-```
-
-Reverter é instantâneo — não precisa rebuild nem restart, é só trocar o
-conteúdo em disco.
+Era a hospedagem antiga, como site estático. Com os arquivos dentro do template, ela deixou de ser
+atualizada: um `git pull` lá não serve mais a página. Se ainda estiver no ar, aponte o link para
+https://telovispro.com.

@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TeloVis Pro | Gestão para salões, barbearias e estética</title>
-  <meta name="description" content="TeloVis Pro: caixa, comissões, relatórios, agenda e IA num sistema feito para salões de beleza, barbearias e clínicas de estética, com a sua marca. Do profissional autônomo à rede de unidades." />
-  <meta property="og:title" content="TeloVis Pro | Seu negócio, seu sistema." />
-  <meta property="og:description" content="Gestão de verdade para salões, barbearias e estética. Vamos conversar sobre o seu." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://telovispro.com/" />
-  <link rel="canonical" href="https://telovispro.com/" />
-  <meta name="theme-color" content="#F7F4EC" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
+<!-- Corpo da LP. O <head> fica em src/routes/index.tsx; o JS em main.js. -->
   <!-- Ícones (traço estilo lucide) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
@@ -52,7 +31,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="?segmento=solo" aria-label="TeloVis Pro, início" data-i18n-attr="aria-label:brand.aria">
-        <img class="brand-logo" src="assets/tl-logo.png" alt="Logo TeloVis Pro: T dourado com pincel e navalha fechada formando o L" data-i18n-attr="alt:brand.alt" width="360" height="353" />
+        <img class="brand-logo" src="/assets/tl-logo.png" alt="Logo TeloVis Pro: T dourado com pincel e navalha fechada formando o L" data-i18n-attr="alt:brand.alt" width="360" height="353" />
         <span class="brand-name">TeloVis Pro<small data-i18n="brand.tagline">Gestão para Salões, Barbearias e Estética</small></span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal" data-i18n-attr="aria-label:nav.aria">
@@ -95,7 +74,7 @@
           <div class="orbit-glow"></div>
           <svg class="orbit-paths" viewBox="0 0 500 450" aria-hidden="true"><ellipse cx="250" cy="225" rx="210" ry="115" transform="rotate(-30 250 225)"/><ellipse cx="250" cy="225" rx="200" ry="150" transform="rotate(35 250 225)"/><path d="M250 75V110M250 340V375M85 225H120M380 225H415"/></svg>
           <div class="orbit-center">
-            <img src="assets/tl-logo.png" alt="Logo TeloVis Pro" width="360" height="353" />
+            <img src="/assets/tl-logo.png" alt="Logo TeloVis Pro" width="360" height="353" />
             <span>TELOVIS PRO</span>
           </div>
           <div class="orbit-node orbit-top"><button class="btn orbit-card" data-goto="modulos"><span class="orbit-icon"><svg class="i"><use href="#i-wallet"/></svg></span><span data-i18n="orbit.cash">Caixa &amp; Comissões em Tempo Real</span></button></div>
@@ -358,13 +337,9 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <a class="brand" href="?segmento=solo" aria-label="TeloVis Pro, início" data-i18n-attr="aria-label:brand.aria">
-        <img class="brand-logo" src="assets/tl-logo.png" alt="" width="360" height="353" />
+        <img class="brand-logo" src="/assets/tl-logo.png" alt="" width="360" height="353" />
         <span class="brand-name">TeloVis Pro</span>
       </a>
       <span data-i18n="ft.copy">© 2026 TeloVis Pro. Um produto <a href="https://telovistech.com/" target="_blank" rel="noopener">TeloVis Tech</a> · CNPJ 51.960.551/0001-38 · Desenvolvido por Willians Santana.</span>
     </div>
   </footer>
-
-  <script type="module" src="main.js"></script>
-</body>
-</html>
