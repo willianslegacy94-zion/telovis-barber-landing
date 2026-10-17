@@ -1,6 +1,12 @@
 # Backlog de Melhorias — Landing Page Telovis Barber
 
-Prioridades definidas por impacto em conversão e visibilidade. Stack atual: HTML + CSS custom + JS vanilla (3 arquivos).
+> **Histórico (v1, set/2026).** Escrito para a LP estática "Telovis Barber" em `kernellwc.online/vendas/`.
+> Desde 2026-10-17 a LP é **TeloVis Pro** (salões, barbearias e estética) em https://telovispro.com,
+> dentro do template da Lovable (`src/landing/`, ver `DEPLOY.md`). Os exemplos de código abaixo usam o
+> nome e os caminhos antigos; as ideias (og-image, JSON-LD, analytics, guardar leads) continuam valendo.
+> `og:url`, `canonical` e `og:image` já foram feitos em `src/routes/index.tsx`.
+
+Prioridades definidas por impacto em conversão e visibilidade. Stack da época: HTML + CSS custom + JS vanilla (3 arquivos).
 
 ---
 
