@@ -128,7 +128,7 @@ document.querySelectorAll('[data-filter]').forEach((btn) => {
   });
 });
 
-// ── Simulador de faturamento por cadeira ────────────────────────────────
+// ── Simulador de faturamento por profissional ────────────────────────────────
 const sim = document.querySelector('.cmv-section');
 const simCta = sim.querySelector('[data-sim-cta]');
 function simulate() {
@@ -156,13 +156,13 @@ form.addEventListener('submit', (event) => {
   const data = Object.fromEntries(new FormData(form));
   const fail = (msg) => { formError.textContent = msg; formError.hidden = false; };
   if (!data.nome || data.nome.trim().length < 2) return fail(t('f.errName'));
-  if (!data.barbearia || data.barbearia.trim().length < 2) return fail(t('f.errShop'));
+  if (!data.negocio || data.negocio.trim().length < 2) return fail(t('f.errShop'));
   if (!form.consent.checked) return fail(t('f.errConsent'));
   formError.hidden = true;
   const lines = [
     t('f.waIntro'),
     `${t('f.waName')}: ${data.nome.trim()}`,
-    `${t('f.waShop')}: ${data.barbearia.trim()}`,
+    `${t('f.waShop')}: ${data.negocio.trim()}`,
     data.cidade && data.cidade.trim() ? `${t('f.waCity')}: ${data.cidade.trim()}` : '',
     `${t('f.waTeam')}: ${data.equipe}`,
     `${t('f.waMoment')}: ${document.querySelector(`[data-segment="${currentSegment}"]`).textContent}`,
