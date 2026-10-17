@@ -203,6 +203,16 @@ export const I18N = {
     'mod.bottom': 'Your business is unique.<strong> So is your system.</strong>',
     'mod.cta': 'Let’s build your proposal',
 
+    'wl.eyebrow': 'WITH YOUR BRAND',
+    'wl.title': 'Your clients see your brand.<br /><span class="text-muted">Not ours.</span>',
+    'wl.lead': 'This is the login screen of Cristaule Beauty, a TL Pro client: the salon’s logo, name, colors and tagline. Same look on computer and phone.',
+    'wl.l1': 'Your business’s logo and colors',
+    'wl.l2': 'Works on computer, tablet and phone',
+    'wl.l3': 'Light and dark theme',
+    'wl.altDesktop': 'Cristaule Beauty system login screen on a computer, with the salon’s logo and colors',
+    'wl.altPhone': 'The same Cristaule Beauty login screen on a phone',
+    'wl.caption': 'Cristaule Beauty · TL Pro system with the salon’s brand',
+
     'trust.translation': '“I used to close the register in a notebook and it never added up. Now I have my P&amp;L on screen in seconds.”',
     'trust.role': 'BARBER AND OWNER — BARBEARIA THIECO LEANDRO',
     'proof.eyebrow': 'PROVEN IN REAL OPERATIONS',
@@ -423,6 +433,16 @@ export const I18N = {
     'm6.l3': 'Control por sucursal',
     'mod.bottom': 'Tu negocio es único.<strong> Tu sistema también.</strong>',
     'mod.cta': 'Armemos tu propuesta',
+
+    'wl.eyebrow': 'CON TU MARCA',
+    'wl.title': 'Tu cliente ve tu marca.<br /><span class="text-muted">No la nuestra.</span>',
+    'wl.lead': 'Esta es la pantalla de acceso de Cristaule Beauty, cliente de TL Pro: logo, nombre, colores y frase del salón. Igual en la computadora y en el celular.',
+    'wl.l1': 'Logo y colores de tu negocio',
+    'wl.l2': 'Funciona en computadora, tablet y celular',
+    'wl.l3': 'Tema claro y oscuro',
+    'wl.altDesktop': 'Pantalla de acceso del sistema de Cristaule Beauty en la computadora, con el logo y los colores del salón',
+    'wl.altPhone': 'La misma pantalla de acceso de Cristaule Beauty en el celular',
+    'wl.caption': 'Cristaule Beauty · sistema TL Pro con la marca del salón',
 
     'trust.translation': '“Antes cerraba la caja en un cuaderno y nunca cuadraba. Hoy tengo el estado de resultados en pantalla en segundos.”',
     'trust.role': 'BARBERO Y PROPIETARIO — BARBEARIA THIECO LEANDRO',
