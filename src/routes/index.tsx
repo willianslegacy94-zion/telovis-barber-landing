@@ -7,16 +7,16 @@ import pageHtml from "../landing/page.html?raw";
 // A LP é HTML + CSS + JS vanilla (src/landing). O HTML vai no SSR como está e o
 // main.js roda no navegador depois da hidratação, com o mesmo comportamento do
 // site estático (idioma, segmentos, simulador, formulário → WhatsApp).
-const title = "TeloVis Pro | Gestão para salões, barbearias e estética";
+const title = "TL Pro | Gestão para salões, barbearias e estética";
 const description =
-  "TeloVis Pro: caixa, comissões, relatórios, agenda e IA num sistema feito para salões de beleza, barbearias e clínicas de estética, com a sua marca. Do profissional autônomo à rede de unidades.";
+  "TL Pro: caixa, comissões, relatórios, agenda e IA num sistema feito para salões de beleza, barbearias e clínicas de estética, com a sua marca. Do profissional autônomo à rede de unidades.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title },
       { name: "description", content: description },
-      { property: "og:title", content: "TeloVis Pro | Seu negócio, seu sistema." },
+      { property: "og:title", content: "TL Pro | Seu negócio, seu sistema." },
       {
         property: "og:description",
         content: "Gestão de verdade para salões, barbearias e estética. Vamos conversar sobre o seu.",
