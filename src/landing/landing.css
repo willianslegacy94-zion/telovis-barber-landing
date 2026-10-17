@@ -258,6 +258,12 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .wl-points { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 11px; }
 .wl-points li { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--foreground); }
 .wl-points .i { color: var(--primary); flex-shrink: 0; }
+.wl-app { display: flex; gap: 16px; align-items: center; margin-top: 28px; padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); max-width: 440px; }
+.wl-app-screen { display: flex; align-items: flex-start; gap: 14px; flex-shrink: 0; padding: 14px 14px 10px; border-radius: 12px; background: linear-gradient(160deg,#3a3630,#1c1a14); }
+.wl-app-icon { display: grid; justify-items: center; gap: 5px; width: 64px; font-size: 9.5px; line-height: 1.2; color: #fff; text-align: center; }
+.wl-app-icon img { width: 46px; height: 46px; display: block; }
+.wl-app h3 { margin: 0 0 4px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.wl-app p { margin: 0; font-size: 12.5px; line-height: 1.6; color: var(--muted-foreground); }
 .wl-showcase { position: relative; margin: 0; padding: 0 0 34px; }
 .wl-showcase img { display: block; width: 100%; height: auto; }
 .device-browser { margin-right: 90px; border: 1px solid var(--orbit-border); border-radius: 12px; overflow: hidden; background: var(--card); box-shadow: var(--orbit-shadow); }
@@ -271,6 +277,13 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .wl-phones .bk-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
 .wl-phones .bk-phone img { aspect-ratio: 540 / 1116; object-fit: cover; object-position: top; }
 .wl-phones figcaption { margin-top: 18px; font-size: 10px; letter-spacing: .4px; color: var(--muted-foreground); text-align: center; }
+.wl-roles { max-width: 720px; margin: 36px auto 0; }
+.wl-roles-title { margin: 0 0 14px; text-align: center; font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink); }
+.wl-roles-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.wl-role { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); }
+.wl-role .project-icon { flex-shrink: 0; margin-top: 2px; }
+.wl-role h3 { margin: 0 0 4px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.wl-role p { margin: 0; font-size: 12.5px; line-height: 1.6; color: var(--muted-foreground); }
 
 .bk-section { padding: 76px 0; background: var(--muted); border-bottom: 1px solid var(--border); overflow: hidden; }
 .bk-layout { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 60px; align-items: center; }
@@ -470,6 +483,7 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
   .wl-showcase figcaption { right: 34%; line-height: 1.5; }
   .wl-showcase { padding-bottom: 44px; }
   .wl-second { margin-top: 40px; padding-top: 32px; }
+  .wl-roles-grid { grid-template-columns: 1fr; }
 
   .trust-section { padding: 48px 0; }
   .trust-statement h2 { font-size: 25px; }
