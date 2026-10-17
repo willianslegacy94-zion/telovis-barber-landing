@@ -44,6 +44,5 @@ npm run build && npm test
 
 ## VPS (kernellwc.online/vendas)
 
-Era a hospedagem antiga, como site estático. Com os arquivos dentro do template, ela deixou de ser
-atualizada: um `git pull` lá não serve mais a página. Se ainda estiver no ar, aponte o link para
-https://telovispro.com.
+Era a hospedagem antiga, como site estático. **Desativada em 2026-10-17:** `kernellwc.online/vendas`
+responde 404 (sem redirecionar). A pasta `/var/www/telovis-barber-landing` na VPS não é mais servida.
