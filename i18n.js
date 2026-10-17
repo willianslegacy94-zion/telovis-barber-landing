@@ -59,7 +59,7 @@ const I18N = {
     'meta.ogDescription': 'Real management for salons, barbershops and aesthetics clinics. Let’s talk about yours.',
 
     'brand.aria': 'TeloVis Pro, home',
-    'brand.alt': 'TeloVis Pro logo: a golden T and a brush forming the L',
+    'brand.alt': 'TeloVis Pro logo: a golden T with a brush and a closed straight razor forming the L',
     'brand.tagline': 'Salon, Barbershop &amp; Aesthetics Management',
     'nav.aria': 'Main navigation',
     'nav.solution': 'The solution',
@@ -280,7 +280,7 @@ const I18N = {
     'meta.ogDescription': 'Gestión de verdad para salones, barberías y estética. Hablemos del tuyo.',
 
     'brand.aria': 'TeloVis Pro, inicio',
-    'brand.alt': 'Logo de TeloVis Pro: una T dorada y un pincel formando la L',
+    'brand.alt': 'Logo de TeloVis Pro: una T dorada con un pincel y una navaja cerrada formando la L',
     'brand.tagline': 'Gestión para Salones, Barberías y Estética',
     'nav.aria': 'Navegación principal',
     'nav.solution': 'La solución',
