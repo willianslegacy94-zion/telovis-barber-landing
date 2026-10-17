@@ -256,6 +256,8 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 .wl-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 70px; align-items: center; }
 .wl-copy h2 { font-size: 34px; line-height: 1.23; font-weight: 500; margin: 0; color: var(--ink); }
 .wl-copy .section-description { max-width: 400px; }
+.wl-note { display: flex; gap: 10px; align-items: flex-start; max-width: 420px; margin: 16px 0 0; padding: 12px 14px; border-left: 2px solid var(--primary); border-radius: 0 10px 10px 0; background: var(--muted); font-size: 12.5px; line-height: 1.6; color: var(--foreground); }
+.wl-note .i { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
 .wl-points { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 11px; }
 .wl-points li { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--foreground); }
 .wl-points .i { color: var(--primary); flex-shrink: 0; }
